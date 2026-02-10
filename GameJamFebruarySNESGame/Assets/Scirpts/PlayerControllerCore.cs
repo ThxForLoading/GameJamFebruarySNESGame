@@ -5,84 +5,73 @@ using UnityEngine.InputSystem;
 public class PlayerControllerCore : MonoBehaviour
 {
     [SerializeField] private InputActionReference move;
-    public float tileSize = 1f;
-    public float moveSpeed = 6f;
+    [SerializeField] private LayerMask obstacleLayer;
+    [SerializeField] public bool lockMovement;
 
-    private bool isMoving;
+    public float moveSpeed = 3f;
+    public float collisionRadius = 0.2f;
+
     private Vector2 input;
+    public Vector2 FacingDirection { get; private set; }
 
-    void OnEnable()
-    {
-        move.action.Enable();
-    }
-
-    void OnDisable()
-    {
-        move.action.Disable();
-    }
-
-    void Start()
-    {
-        transform.position = SnapToGrid(transform.position);
-    }
+    void OnEnable() => move.action.Enable();
+    void OnDisable() => move.action.Disable();
 
     void Update()
     {
-        if (!isMoving)
-        {
-            Vector2 dir = GetDirection();
-            if (dir != Vector2.zero)
-            {
-                Vector3 targetPos = transform.position + (Vector3)(dir * tileSize);
-                StartCoroutine(Move(targetPos));
-            }
-        }
+        ReadInput();
     }
 
-    Vector2 GetDirection()
+    private void FixedUpdate()
+    {
+        if (lockMovement) return;
+
+        Move();
+    }
+
+    void ReadInput()
     {
         input = move.action.ReadValue<Vector2>();
 
-        int x = Mathf.RoundToInt(input.x);
-        int y = Mathf.RoundToInt(input.y);
-
-        if (x != 0 && y != 0)
+        if (input.sqrMagnitude > 1f)
         {
-            if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
-                y = 0;
-            else
-                x = 0;
+            input.Normalize();
         }
 
-        return new Vector2(x, y);
+        if (input != Vector2.zero)
+        {
+            FacingDirection = input;
+        }
     }
 
-    IEnumerator Move(Vector3 targetPos)
+    void Move()
     {
-        isMoving = true;
+        Vector2 delta = input * moveSpeed * Time.deltaTime;
+        if (delta == Vector2.zero) return;
 
-        while ((targetPos - transform.position).sqrMagnitude > 0.001f)
+        Vector2 pos = transform.position;
+
+        if (!Physics2D.OverlapCircle(pos + delta, collisionRadius, obstacleLayer))
         {
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                targetPos,
-                moveSpeed * Time.deltaTime
-            );
-            yield return null;
+            transform.position = pos + delta;
+            return;
         }
 
-        transform.position = targetPos;
-        isMoving = false;
+        if (!Physics2D.OverlapCircle(pos + new Vector2(delta.x, 0), collisionRadius, obstacleLayer))
+        {
+            transform.position += new Vector3(delta.x, 0, 0);
+            return;
+        }
 
-        transform.position = SnapToGrid(targetPos);
+        if (!Physics2D.OverlapCircle(pos + new Vector2(0, delta.y), collisionRadius, obstacleLayer))
+        {
+            transform.position += new Vector3(0, delta.y, 0);
+        }
     }
 
-    Vector3 SnapToGrid(Vector3 pos)
-    {
-        return new Vector3(
-            Mathf.Round(pos.x / tileSize) * tileSize,
-            Mathf.Round(pos.y / tileSize) * tileSize,
-            pos.z
-        );
+    private void OnDrawGizmosSelected()
+    { 
+        Gizmos.color = Color.yellow; 
+        Gizmos.DrawWireSphere(transform.position, collisionRadius); 
     }
 }
