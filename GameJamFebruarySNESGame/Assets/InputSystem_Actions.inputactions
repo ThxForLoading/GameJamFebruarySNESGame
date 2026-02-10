@@ -7,10 +7,10 @@
             "id": "bad9c128-a44a-4cff-b399-b1265952f26e",
             "actions": [
                 {
-                    "name": "Walk",
-                    "type": "PassThrough",
+                    "name": "Move",
+                    "type": "Value",
                     "id": "4be1d43b-55d0-4d6b-8b0b-488387c6f224",
-                    "expectedControlType": "Dpad",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -96,7 +96,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Walk",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -107,7 +107,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";SNESController",
-                    "action": "Walk",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "up",
+                    "id": "3be74667-2be4-410b-a6ba-d92f094d5f52",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";SNESController",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -118,7 +129,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";SNESController",
-                    "action": "Walk",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "92d5d655-e9df-4348-aeb4-75e733309302",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";SNESController",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -129,7 +151,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";SNESController",
-                    "action": "Walk",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "6577d41b-61c2-4a44-af6d-54d6819f7abd",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";SNESController",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -140,7 +173,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";SNESController",
-                    "action": "Walk",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "066a57aa-2010-45a1-8a3c-3b50e80b73e6",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";SNESController",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
