@@ -141,9 +141,13 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1024
+  iceLayer:
+    serializedVersion: 2
+    m_Bits: 256
   lockMovement: 0
   moveSpeed: 5
   collisionRadius: 0.37
+  FacingDirection: {x: 0, y: 0}
 --- !u!61 &9050417159123206953
 BoxCollider2D:
   m_ObjectHideFlags: 0
