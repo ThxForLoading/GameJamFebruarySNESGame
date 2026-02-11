@@ -7,7 +7,7 @@ public class SaveHandler : MonoBehaviour
     private string saveLocation;
     public string saveName = "saveData";
 
-    SaveHandler instance;
+    public static SaveHandler instance;
 
     private void Awake()
     {
@@ -25,8 +25,6 @@ public class SaveHandler : MonoBehaviour
     void Start()
     {
         saveLocation = Path.Combine(Application.persistentDataPath, saveName + ".json");
-
-        LoadGame();
     }
 
     public void SaveGame()

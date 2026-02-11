@@ -201,8 +201,30 @@
                 },
                 {
                     "name": "",
+                    "id": "057df8b8-ea2e-44bf-9dbf-11b4a2f50d6e",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";SNESController",
+                    "action": "AButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e7fe5326-f901-45a0-a6b4-9c02e0970ee2",
                     "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";SNESController",
+                    "action": "BButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4268e448-bf53-41b5-b1ae-01bbea475adf",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": ";SNESController",
