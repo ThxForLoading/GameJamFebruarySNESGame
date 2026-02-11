@@ -1,16 +1,26 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class PlayerControllerCore : MonoBehaviour
 {
     [SerializeField] private InputActionReference move;
+    [SerializeField] private InputActionReference aButton;
+    [SerializeField] private InputActionReference bButton;
     [SerializeField] private LayerMask obstacleLayer;
     [SerializeField] private LayerMask iceLayer;
+    [SerializeField] private LayerMask waterLayer;
     [SerializeField] public bool lockMovement;
+
+    //assign a tilemap so the player can interact with certain tiles
+    Tilemap tileMap;
 
     public float moveSpeed = 3f;
     public float collisionRadius = 0.2f;
+
+    private SpellHandler spellHandler;
 
  
 
@@ -26,6 +36,28 @@ public class PlayerControllerCore : MonoBehaviour
 
     void OnEnable() => move.action.Enable();
     void OnDisable() => move.action.Disable();
+
+    private void Awake()
+    {
+        spellHandler = GetComponent<SpellHandler>();
+        aButton.action.performed += PlayerCastIce;
+        bButton.action.performed += PlayerCastFire;
+
+        if(GameObject.FindGameObjectWithTag("TileHandler") != null)
+        {
+            tileMap = GameObject.FindGameObjectWithTag("TileHandler").GetComponent<TilemapChanger>().groundTileMap;
+        }
+    }
+
+    private void PlayerCastFire(InputAction.CallbackContext context)
+    {
+        spellHandler.castFire();
+    }
+
+    private void PlayerCastIce(InputAction.CallbackContext context)
+    {
+        spellHandler.castIce();
+    }
 
     void Update()
     {
@@ -107,32 +139,19 @@ public class PlayerControllerCore : MonoBehaviour
         }
 
         return false;
-
-        //if (!Physics2D.OverlapCircle(pos + delta, collisionRadius, obstacleLayer))
-        //{
-        //    transform.position = pos + delta;
-        //    return true;
-        //}
-
-        //if (!Physics2D.OverlapCircle(pos + new Vector2(delta.x, 0), collisionRadius, obstacleLayer))
-        //{
-        //    transform.position += new Vector3(delta.x, 0, 0);
-        //    return true;
-        //}
-
-        //if (!Physics2D.OverlapCircle(pos + new Vector2(0, delta.y), collisionRadius, obstacleLayer))
-        //{
-        //    transform.position += new Vector3(0, delta.y, 0);
-        //    return true;
-        //}
-
-        //return false;
     }
 
     private void OnDrawGizmosSelected()
     { 
         Gizmos.color = Color.yellow; 
-        Gizmos.DrawWireSphere(transform.position, collisionRadius); 
+        Gizmos.DrawWireSphere(transform.position, collisionRadius);
+
+        if (tileMap == null) return;
+
+        Gizmos.color = Color.red;
+        Vector3Int cell = GetSelectedTile();
+        Vector3 center = tileMap.GetCellCenterWorld(cell);
+        Gizmos.DrawWireCube(center, Vector3.one * 0.9f);
     }
 
     void CheckIce()
@@ -142,15 +161,28 @@ public class PlayerControllerCore : MonoBehaviour
 
     Vector3 CanWalkCollision(Vector2 pos, Vector2 delta)
     {
+        LayerMask collisionMask = obstacleLayer | waterLayer;
+
         Vector3 temp = new Vector3();
-        if (!Physics2D.OverlapCircle(pos + new Vector2(delta.x, 0), collisionRadius, obstacleLayer))
+        if (!Physics2D.OverlapCircle(pos + new Vector2(delta.x, 0), collisionRadius, collisionMask))
         {
             temp.x = delta.x;
         }
-        if (!Physics2D.OverlapCircle(pos + new Vector2(0, delta.y), collisionRadius, obstacleLayer))
+        if (!Physics2D.OverlapCircle(pos + new Vector2(0, delta.y), collisionRadius, collisionMask))
         {
             temp.y = delta.y;
         }
         return temp;
+    }
+
+    public Vector3Int GetSelectedTile()
+    {
+        if (tileMap == null) return new Vector3Int();
+
+        Vector3 worldPos = transform.position + new Vector3(FacingDirection.x, FacingDirection.y, 0);
+
+        Vector3Int tilePos = tileMap.WorldToCell(worldPos);
+
+        return tilePos;
     }
 }

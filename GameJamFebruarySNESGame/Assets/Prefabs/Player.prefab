@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 5511102182454224172}
   - component: {fileID: 9050417159123206953}
   - component: {fileID: 7511925561391286609}
+  - component: {fileID: 7512942014283122620}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -138,13 +139,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControllerCore
   move: {fileID: 3119172567759272096, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  aButton: {fileID: 4818524347499601303, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  bButton: {fileID: 1989535138368068065, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1024
   iceLayer:
     serializedVersion: 2
     m_Bits: 256
+  waterLayer:
+    serializedVersion: 2
+    m_Bits: 16
   lockMovement: 0
+  tileMap: {fileID: 0}
   moveSpeed: 5
   collisionRadius: 0.37
   FacingDirection: {x: 0, y: 0}
@@ -221,3 +228,19 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &7512942014283122620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4318152617701025656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1abaa684c7f66e2488e629e29b7fd239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpellHandler
+  fireRange: 3
+  fireSpreadSpeed: 0.5
+  iceRange: 5
+  iceSpreadSpeed: 0.5
