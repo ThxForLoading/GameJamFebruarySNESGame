@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SceneHandler
   - SpawnPoint
+  - TilemapGrid
   layers:
   - Default
   - TransparentFX
