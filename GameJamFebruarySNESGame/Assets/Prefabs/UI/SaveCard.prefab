@@ -365,6 +365,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveSlotHighlighter
   highlight: {fileID: 8331357209337159157}
+  slotIndex: 0
+  titleText: {fileID: 767312894819230587}
+  sceneText: {fileID: 5232047844389837536}
+  timeText: {fileID: 2474972732213654511}
 --- !u!1 &8331357209337159157
 GameObject:
   m_ObjectHideFlags: 0

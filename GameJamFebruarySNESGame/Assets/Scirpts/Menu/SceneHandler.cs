@@ -33,12 +33,18 @@ public class SceneHandler : MonoBehaviour
 
     IEnumerator LoadSceneWithFade(string sceneName)
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerCore>().lockMovement = true;
+        if(GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerCore>().lockMovement = true;
+        }
         yield return StartCoroutine(Fade(1f));
         SceneManager.LoadScene(sceneName);
-        yield return null;
+        yield return new WaitForSeconds(2);
         yield return StartCoroutine(Fade(0f));
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerCore>().lockMovement = false;
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerCore>().lockMovement = false;
+        }
     }
 
     public void LoadSceneAtSpawn(string sceneName, string spawnPoint)

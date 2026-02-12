@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
@@ -25,6 +26,7 @@ public class MainMenuHandler : MonoBehaviour
     private bool anyButtonPressed = false;
     private float helperTimer = 0;
     private bool canMove = true;
+    [SerializeField] string defaultScene;
 
     public enum MenuState
     {
@@ -41,6 +43,46 @@ public class MainMenuHandler : MonoBehaviour
     private void OnEnable()
     {
         InputSystem.onAnyButtonPress.Call(OnAnyButtonPressed);
+        confirmKey.action.performed += ConfirmKey;
+    }
+
+    private void OnDisable()
+    {
+        confirmKey.action.performed -= ConfirmKey;
+    }
+
+    void ConfirmKey(InputAction.CallbackContext context)
+    {
+        if(menuState == MenuState.SaveSlots)
+        {
+            menuState = MenuState.Waiting;
+            StartCoroutine(LaunchGame());
+        }
+    }
+
+    IEnumerator LaunchGame()
+    {
+        if(string.IsNullOrEmpty(defaultScene))
+        {
+            Debug.Log("Failed to init game, defaultscene missing");
+            yield break;
+        }
+
+        SaveHandler.instance.BeginLoadFromSlot(selector);
+
+        string targetScene;
+        if (SaveHandler.instance.GetSaveDataForSlot(selector) != null)
+        {
+            SaveData data = SaveHandler.instance.GetSaveDataForSlot(selector);
+            targetScene = data.sceneName;
+        }
+        else
+        {
+            targetScene = defaultScene;
+        }
+            
+        yield return new WaitForSeconds(2);
+        SceneHandler.instance.LoadScene(targetScene);
     }
 
     void OnAnyButtonPressed(InputControl control)
@@ -157,7 +199,7 @@ public class MainMenuHandler : MonoBehaviour
                 if (pressAnyKey.activeSelf) pressAnyKey.SetActive(false);
                 break;
             case MenuState.Waiting:
-                    Debug.Log("Currently Waiting");
+                    //Debug.Log("Currently Waiting");
                 break;
             default:
                 Debug.Log("No state, this shouldn't happen");
