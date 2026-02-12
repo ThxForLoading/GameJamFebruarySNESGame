@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.Utilities;
 
 public class SaveInteractPlayer : MonoBehaviour
 {
-    PlayerControllerCore controller;
+    [SerializeField] PlayerControllerCore controller;
     [SerializeField] GameObject textBox;
     [SerializeField] GameObject textSavePrompt;
     [SerializeField] GameObject textSaveConfirmation;
@@ -40,7 +40,7 @@ public class SaveInteractPlayer : MonoBehaviour
         confirmAnswer = true;
     }
 
-    void BeginSaveInteraction()
+    public void BeginSaveInteraction()
     {
         controller.lockMovement = true;
         if(!textBox.activeSelf) textBox.SetActive(true);
@@ -52,6 +52,8 @@ public class SaveInteractPlayer : MonoBehaviour
 
     IEnumerator SelectAnswer()
     {
+        waitingForInput = true;
+
         while (!confirmAnswer)
         {
             Vector2 input = moveSelector.action.ReadValue<Vector2>();
