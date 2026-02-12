@@ -13,7 +13,8 @@ public class SpellHandler : MonoBehaviour
     [SerializeField] int iceRange = 5;
     [SerializeField] float iceSpreadSpeed = 0.5f;
     [Header("Plants")]
-
+    [SerializeField] int plantRange = 5;
+    [SerializeField] float plantGrowSpeed = 0.5f;
     [Header("Light")]
     [SerializeField] GameObject darknessOverlay;
     [SerializeField] GameObject lightOverlay;
@@ -157,6 +158,54 @@ public class SpellHandler : MonoBehaviour
 
         Vector3Int startingLocation = playerController.GetSelectedTile();
 
+        if (changer.CanPlacePlantClimb(startingLocation))
+        {
+            isCasting = true;
+
+            Vector3Int[] affectedTiles = new Vector3Int[plantRange];
+
+
+            for (int i = 0; i < plantRange; i++)
+            {
+                affectedTiles[i] = startingLocation + new Vector3Int(0, i, 0);      //Plant always grows up
+            }
+
+            if (affectedTiles.Length > 0)
+            {
+                StartCoroutine(GrowPlantInLine(affectedTiles));
+            }
+
+        }
+        else if (changer.CanPlacePlantGround(startingLocation))
+        {
+            //place tile with plant over ground
+            changer.PlaceGroundPlantTileAt(startingLocation);
+        }
+    }
+
+    IEnumerator GrowPlantInLine(Vector3Int[] affectedTiles)
+    {
+        //Plant should use bottom piece for 0, top piece for last tile and regular plant piece for the rest
+        for (int i = 0;i < affectedTiles.Length; i++)
+        {
+            if(i == affectedTiles.Length - 1)
+            {
+                changer.RemoveObstacle(affectedTiles[i]);
+                changer.PlacePlantTopTileAt(affectedTiles[i]);
+            }
+            else if (i == 0)
+            {
+                changer.RemoveObstacle(affectedTiles[i]);
+                changer.PlacePlantBottomTileAt(affectedTiles[i]);
+            }
+            else
+            {
+                changer.RemoveObstacle(affectedTiles[i]);
+                changer.PlacePlantMiddleTileAt(affectedTiles[i]);
+            }
+            yield return new WaitForSeconds(plantGrowSpeed);
+        }
+        isCasting = false;
     }
 
     public void castLight()

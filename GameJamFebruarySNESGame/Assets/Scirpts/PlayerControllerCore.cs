@@ -57,7 +57,7 @@ public class PlayerControllerCore : MonoBehaviour
 
     private void PlayerCastFire(InputAction.CallbackContext context)
     {
-        spellHandler.castFire();
+        spellHandler.castPlant();
     }
 
     private void PlayerCastIce(InputAction.CallbackContext context)
