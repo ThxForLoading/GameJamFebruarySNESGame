@@ -103,17 +103,27 @@ public class PlayerControllerCore : MonoBehaviour
     }
     void UpdateAnimator()
     {
-        Vector2 dirSource = input != Vector2.zero ? input : FacingDirection;
+        Vector2 dirSource;
+
+        if (lockMovement)
+        {
+            dirSource = FacingDirection;
+            animator.SetFloat("Speed", 0f);
+        }
+        else
+        {
+            dirSource = input != Vector2.zero ? input : FacingDirection;
+            animator.SetFloat("Speed", input.sqrMagnitude);
+        }
+
         Vector2Int dir = Get8Direction(dirSource);
 
-        if (dir.x != 0)
-            spriteRenderer.flipX = dir.x < 0;
+        if (dir.x != 0) spriteRenderer.flipX = dir.x < 0;
 
         dir = RemapToRight(dir);
 
         animator.SetInteger("DirX", dir.x);
         animator.SetInteger("DirY", dir.y);
-        animator.SetFloat("Speed", input.sqrMagnitude);
     }
 
     Vector2Int RemapToRight(Vector2Int dir)
@@ -135,7 +145,7 @@ public class PlayerControllerCore : MonoBehaviour
             input.Normalize();
         }
 
-        if (input != Vector2.zero)
+        if (input != Vector2.zero && !lockMovement)
         {
             FacingDirection = input;
         }
