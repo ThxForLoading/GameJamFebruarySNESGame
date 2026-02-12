@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: d768570578a21454ca7e16316baffb5b
-
-
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -77,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -259,8 +257,8 @@ TextureImporter:
       name: tilesheet_waterfall_cave_7
       rect:
         serializedVersion: 2
-        x: 112
-        y: 240
+        x: 0
+        y: 224
         width: 16
         height: 16
       alignment: 0
@@ -281,7 +279,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_8
       rect:
         serializedVersion: 2
-        x: 0
+        x: 16
         y: 224
         width: 16
         height: 16
@@ -303,7 +301,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_9
       rect:
         serializedVersion: 2
-        x: 16
+        x: 32
         y: 224
         width: 16
         height: 16
@@ -325,7 +323,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_10
       rect:
         serializedVersion: 2
-        x: 32
+        x: 48
         y: 224
         width: 16
         height: 16
@@ -347,7 +345,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_11
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 224
         width: 16
         height: 16
@@ -369,7 +367,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_12
       rect:
         serializedVersion: 2
-        x: 64
+        x: 80
         y: 224
         width: 16
         height: 16
@@ -391,7 +389,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_13
       rect:
         serializedVersion: 2
-        x: 80
+        x: 96
         y: 224
         width: 16
         height: 16
@@ -413,8 +411,8 @@ TextureImporter:
       name: tilesheet_waterfall_cave_14
       rect:
         serializedVersion: 2
-        x: 96
-        y: 224
+        x: 0
+        y: 208
         width: 16
         height: 16
       alignment: 0
@@ -435,7 +433,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_15
       rect:
         serializedVersion: 2
-        x: 0
+        x: 16
         y: 208
         width: 16
         height: 16
@@ -457,7 +455,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_16
       rect:
         serializedVersion: 2
-        x: 16
+        x: 32
         y: 208
         width: 16
         height: 16
@@ -479,7 +477,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_17
       rect:
         serializedVersion: 2
-        x: 32
+        x: 48
         y: 208
         width: 16
         height: 16
@@ -501,7 +499,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_18
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 208
         width: 16
         height: 16
@@ -523,7 +521,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_19
       rect:
         serializedVersion: 2
-        x: 64
+        x: 80
         y: 208
         width: 16
         height: 16
@@ -545,7 +543,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_20
       rect:
         serializedVersion: 2
-        x: 80
+        x: 96
         y: 208
         width: 16
         height: 16
@@ -567,8 +565,8 @@ TextureImporter:
       name: tilesheet_waterfall_cave_21
       rect:
         serializedVersion: 2
-        x: 96
-        y: 208
+        x: 16
+        y: 192
         width: 16
         height: 16
       alignment: 0
@@ -589,7 +587,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_22
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 192
         width: 16
         height: 16
@@ -611,7 +609,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_23
       rect:
         serializedVersion: 2
-        x: 16
+        x: 48
         y: 192
         width: 16
         height: 16
@@ -633,7 +631,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_24
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 192
         width: 16
         height: 16
@@ -655,7 +653,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_25
       rect:
         serializedVersion: 2
-        x: 48
+        x: 80
         y: 192
         width: 16
         height: 16
@@ -677,7 +675,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_26
       rect:
         serializedVersion: 2
-        x: 64
+        x: 96
         y: 192
         width: 16
         height: 16
@@ -699,8 +697,8 @@ TextureImporter:
       name: tilesheet_waterfall_cave_27
       rect:
         serializedVersion: 2
-        x: 80
-        y: 192
+        x: 0
+        y: 176
         width: 16
         height: 16
       alignment: 0
@@ -721,8 +719,8 @@ TextureImporter:
       name: tilesheet_waterfall_cave_28
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
+        x: 16
+        y: 176
         width: 16
         height: 16
       alignment: 0
@@ -743,7 +741,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_29
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 176
         width: 16
         height: 16
@@ -765,7 +763,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_30
       rect:
         serializedVersion: 2
-        x: 16
+        x: 48
         y: 176
         width: 16
         height: 16
@@ -787,7 +785,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_31
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 176
         width: 16
         height: 16
@@ -809,7 +807,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_32
       rect:
         serializedVersion: 2
-        x: 48
+        x: 80
         y: 176
         width: 16
         height: 16
@@ -831,7 +829,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_33
       rect:
         serializedVersion: 2
-        x: 64
+        x: 96
         y: 176
         width: 16
         height: 16
@@ -853,8 +851,8 @@ TextureImporter:
       name: tilesheet_waterfall_cave_34
       rect:
         serializedVersion: 2
-        x: 80
-        y: 176
+        x: 16
+        y: 160
         width: 16
         height: 16
       alignment: 0
@@ -875,7 +873,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_35
       rect:
         serializedVersion: 2
-        x: 16
+        x: 32
         y: 160
         width: 16
         height: 16
@@ -897,7 +895,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_36
       rect:
         serializedVersion: 2
-        x: 32
+        x: 48
         y: 160
         width: 16
         height: 16
@@ -919,7 +917,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_37
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 160
         width: 16
         height: 16
@@ -941,7 +939,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_38
       rect:
         serializedVersion: 2
-        x: 64
+        x: 80
         y: 160
         width: 16
         height: 16
@@ -963,7 +961,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_39
       rect:
         serializedVersion: 2
-        x: 80
+        x: 96
         y: 160
         width: 16
         height: 16
@@ -1095,8 +1093,8 @@ TextureImporter:
       name: tilesheet_waterfall_cave_45
       rect:
         serializedVersion: 2
-        x: 16
-        y: 128
+        x: 96
+        y: 144
         width: 16
         height: 16
       alignment: 0
@@ -1117,7 +1115,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_46
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 128
         width: 16
         height: 16
@@ -1139,7 +1137,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_47
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 128
         width: 16
         height: 16
@@ -1161,8 +1159,8 @@ TextureImporter:
       name: tilesheet_waterfall_cave_48
       rect:
         serializedVersion: 2
-        x: 16
-        y: 112
+        x: 48
+        y: 128
         width: 16
         height: 16
       alignment: 0
@@ -1183,8 +1181,8 @@ TextureImporter:
       name: tilesheet_waterfall_cave_49
       rect:
         serializedVersion: 2
-        x: 32
-        y: 112
+        x: 96
+        y: 128
         width: 16
         height: 16
       alignment: 0
@@ -1205,7 +1203,7 @@ TextureImporter:
       name: tilesheet_waterfall_cave_50
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 112
         width: 16
         height: 16
@@ -1219,6 +1217,50 @@ TextureImporter:
       bones: []
       spriteID: 0af57b650335d534c8954ed199ac1a22
       internalID: -435402443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesheet_waterfall_cave_51
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaeb8edeb8dc7e942acc83a825a9b02b
+      internalID: 1926920205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesheet_waterfall_cave_52
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe15f315fff9e924da491cac70970af3
+      internalID: -1650148726
       vertices: []
       indices: 
       edges: []
@@ -1286,6 +1328,8 @@ TextureImporter:
       tilesheet_waterfall_cave_49: 359196671
       tilesheet_waterfall_cave_5: 1431097416
       tilesheet_waterfall_cave_50: -435402443
+      tilesheet_waterfall_cave_51: 1926920205
+      tilesheet_waterfall_cave_52: -1650148726
       tilesheet_waterfall_cave_6: -1912901614
       tilesheet_waterfall_cave_7: -960866701
       tilesheet_waterfall_cave_8: -1602562149
