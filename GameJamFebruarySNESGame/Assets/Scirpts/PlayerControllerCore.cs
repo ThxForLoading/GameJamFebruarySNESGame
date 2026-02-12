@@ -17,6 +17,7 @@ public class PlayerControllerCore : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private PlayerKnockback knockback;
     //assign a tilemap so the player can interact with certain tiles
     Tilemap tileMap;
 
@@ -43,6 +44,7 @@ public class PlayerControllerCore : MonoBehaviour
     private void Awake()
     {
         spellHandler = GetComponent<SpellHandler>();
+        knockback = GetComponent<PlayerKnockback>();
         aButton.action.performed += PlayerCastIce;
         bButton.action.performed += PlayerCastFire;
 
@@ -71,6 +73,21 @@ public class PlayerControllerCore : MonoBehaviour
     private void FixedUpdate()
     {
         if (lockMovement) return;
+
+        if (knockback != null && knockback.IsActive)
+        {
+            Vector2 kbDelta = knockback.ConsumeDelta();
+
+            if (kbDelta != Vector2.zero)
+            {
+                // Use your existing collision resolution, but it expects a delta.
+                ApplyDeltaWithCollision(kbDelta);
+            }
+
+            // Optional: disable player control while being knocked back
+            return;
+        }
+
 
         CheckIce();
 
@@ -254,5 +271,16 @@ public class PlayerControllerCore : MonoBehaviour
     public void DeactivateDarkness()
     {
         spellHandler.DisableDarkness();
+    }
+
+    void ApplyDeltaWithCollision(Vector2 delta)
+    {
+        if (delta == Vector2.zero) return;
+
+        Vector2 pos = transform.position;
+        Vector3 temp = CanWalkCollision(pos, delta);
+
+        if (temp != Vector3.zero)
+            transform.position += temp;
     }
 }

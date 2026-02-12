@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
-    public int maxHp = 10;
+    public int maxHp = 6;
     public int hp;
 
     private PlayerKnockback knockback;

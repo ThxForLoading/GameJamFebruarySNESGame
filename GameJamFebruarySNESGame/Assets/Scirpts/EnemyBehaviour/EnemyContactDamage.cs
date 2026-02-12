@@ -12,11 +12,14 @@ public class EnemyContactDamage : MonoBehaviour
 
     private float nextHitTime = 0f;
     private Collider2D hitbox;
+    private Animator anim;
 
     void Awake()
     {
         hitbox = GetComponent<Collider2D>();
         hitbox.isTrigger = true;
+
+        anim = GetComponentInParent<Animator>();
     }
 
     void OnTriggerEnter2D(Collider2D other) => TryHit(other);
@@ -34,6 +37,8 @@ public class EnemyContactDamage : MonoBehaviour
         hitDir.Normalize();
 
         dmg.TakeDamage(damage, hitDir);
+
+        if (anim) anim.SetTrigger("HitPlayer");
 
         nextHitTime = Time.time + hitCooldownSeconds;
     }
