@@ -43,9 +43,9 @@ public class SaveInteractPlayer : MonoBehaviour
     public void BeginSaveInteraction()
     {
         controller.lockMovement = true;
-        if(!textBox.activeSelf) textBox.SetActive(true);
-        if(!textSavePrompt.activeSelf) textSavePrompt.SetActive(true);
-        if(!answerHolder.activeSelf) answerHolder.SetActive(true);
+        textBox.SetActive(true);
+        textSavePrompt.SetActive(true);
+        answerHolder.SetActive(true);
 
         StartCoroutine(SelectAnswer());
     }
@@ -84,8 +84,9 @@ public class SaveInteractPlayer : MonoBehaviour
         {
             if (textSavePrompt.activeSelf) textSavePrompt.SetActive(false);
             if (answerHolder.activeSelf) answerHolder.SetActive(false);
-            yield return new WaitForSeconds(1);
-            if (!textSaveConfirmation.activeSelf) textSaveConfirmation.SetActive(true);
+            textSaveConfirmation.SetActive(true);
+            SaveHandler.instance.SaveGame();
+            yield return new WaitForSeconds(2);
         }
 
         EndSaveInteraction();
@@ -97,6 +98,11 @@ public class SaveInteractPlayer : MonoBehaviour
         if (answerHolder.activeSelf) answerHolder.SetActive(false);
         if (textSaveConfirmation.activeSelf) textSaveConfirmation.SetActive(false);
         if (textBox.activeSelf) textBox.SetActive(false);
+
+        confirmAnswer = false;
+        waitingForInput = false;
+        yesOrNo = true;
+        canMove = true;
 
         controller.lockMovement = false;
     }
