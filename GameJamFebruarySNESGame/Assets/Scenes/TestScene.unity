@@ -8034,6 +8034,10 @@ MonoBehaviour:
   obstacles: {fileID: 1375406629}
   fireTileMap: {fileID: 603051322}
   fireTile: {fileID: 11400000, guid: e853af97b54547946ac872b3e06f5a2e, type: 2}
+  plantTileMap: {fileID: 0}
+  plantBottomTile: {fileID: 0}
+  plantTile: {fileID: 0}
+  plantTopTile: {fileID: 0}
   groundTileMap: {fileID: 1375999303}
 --- !u!4 &1468140087
 Transform:

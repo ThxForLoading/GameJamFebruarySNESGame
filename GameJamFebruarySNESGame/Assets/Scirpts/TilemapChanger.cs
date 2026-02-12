@@ -9,6 +9,10 @@ public class TilemapChanger : MonoBehaviour
     [SerializeField] Tilemap obstacles;
     [SerializeField] Tilemap fireTileMap;
     [SerializeField] Tile fireTile;
+    [SerializeField] Tilemap plantTileMap;
+    [SerializeField] Tile plantBottomTile;
+    [SerializeField] Tile plantTile;
+    [SerializeField] Tile plantTopTile;
     [SerializeField] public Tilemap groundTileMap;
 
     GameObject gridTileMap;
@@ -18,15 +22,12 @@ public class TilemapChanger : MonoBehaviour
         gridTileMap = GameObject.FindGameObjectWithTag("TilemapGrid");
     }
 
-    void Start()
+    public bool CanPlacePlant(Vector3Int position)
     {
-
+        //Plant placement rules here
+        return true;
     }
 
-    void Update()
-    {
-        
-    }
 
     public bool CanPlaceIce(Vector3Int position)
     {
@@ -65,5 +66,10 @@ public class TilemapChanger : MonoBehaviour
     public void PlaceFireTileAt(Vector3Int position)
     {
         fireTileMap.SetTile(position, fireTile);
+    }
+
+    public void PlacePlantTileAt(Vector3Int position)
+    {
+
     }
 }

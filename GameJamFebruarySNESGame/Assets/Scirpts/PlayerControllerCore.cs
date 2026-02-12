@@ -245,4 +245,14 @@ public class PlayerControllerCore : MonoBehaviour
 
         return new Vector2Int(x, y);
     }
+
+    public void ActivateDarkness()
+    {
+        spellHandler.EnableDarkness();
+    }
+
+    public void DeactivateDarkness()
+    {
+        spellHandler.DisableDarkness();
+    }
 }
