@@ -1,13 +1,20 @@
 using System.IO;
 using Unity.Cinemachine;
+using UnityEditor.Overlays;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveHandler : MonoBehaviour
 {
     private string saveLocation;
-    public string saveName = "saveData";
+    public string saveName = "saveSlot";
+    public int currentSlot = 0;
 
     public static SaveHandler instance;
+
+    private float sessionPlaytime = 0;
+
+    private SaveData pendingLoadData;
 
     private void Awake()
     {
@@ -22,9 +29,32 @@ public class SaveHandler : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (pendingLoadData == null) return;
+
+        ApplySaveData(pendingLoadData);
+        pendingLoadData = null;
+    }
+
     void Start()
     {
-        saveLocation = Path.Combine(Application.persistentDataPath, saveName + ".json");
+        saveLocation = Path.Combine(Application.persistentDataPath, saveName + currentSlot + ".json");
+    }
+
+    private void Update()
+    {
+        sessionPlaytime += Time.deltaTime;
     }
 
     public void SaveGame()
@@ -32,25 +62,55 @@ public class SaveHandler : MonoBehaviour
         SaveData saveData = new SaveData()
         {
             playerPos = GameObject.FindGameObjectWithTag("Player").transform.position,
-            mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D.gameObject.name
+            mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D.gameObject.name,
+            sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name,
+            playTime = sessionPlaytime
         };
 
-        File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
+        File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData, true));
     }
 
     public void LoadGame()
     {
-        if (File.Exists(saveLocation))
+        if (!File.Exists(saveLocation))
         {
-            SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
-
-            GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPos;
-
-            FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D = GameObject.Find(saveData.mapBoundary).GetComponent<PolygonCollider2D>();
-        }
-        else
-        {
+            Debug.Log($"No save found in slot {currentSlot}, creating new one.");
             SaveGame();
+            return;
         }
+
+        SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
+
+        GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPos;
+
+        FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D = GameObject.Find(saveData.mapBoundary).GetComponent<PolygonCollider2D>();
+
+        sessionPlaytime = saveData.playTime;
+    }
+
+    public SaveData GetSaveDataForSlot(int slot)
+    {
+        string path = Path.Combine(Application.persistentDataPath, saveName + slot + ".json");
+
+        if (!File.Exists(path))
+            return null;
+
+        string json = File.ReadAllText(path);
+        return JsonUtility.FromJson<SaveData>(json);
+    }
+
+    public void BeginLoadFromSlot(int slot)
+    {
+        currentSlot = slot;
+        pendingLoadData = GetSaveDataForSlot(slot);
+    }
+
+    void ApplySaveData(SaveData data)
+    {
+        GameObject.FindGameObjectWithTag("Player").transform.position = data.playerPos;
+
+        FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D = GameObject.Find(data.mapBoundary).GetComponent<PolygonCollider2D>();
+
+        sessionPlaytime = data.playTime;
     }
 }

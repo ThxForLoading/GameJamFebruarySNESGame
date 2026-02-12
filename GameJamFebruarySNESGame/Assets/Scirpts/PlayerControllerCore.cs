@@ -14,6 +14,10 @@ public class PlayerControllerCore : MonoBehaviour
     [SerializeField] private LayerMask waterLayer;
     [SerializeField] public bool lockMovement;
 
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [SerializeField] private PlayerKnockback knockback;
     //assign a tilemap so the player can interact with certain tiles
     Tilemap tileMap;
 
@@ -40,6 +44,7 @@ public class PlayerControllerCore : MonoBehaviour
     private void Awake()
     {
         spellHandler = GetComponent<SpellHandler>();
+        knockback = GetComponent<PlayerKnockback>();
         aButton.action.performed += PlayerCastIce;
         bButton.action.performed += PlayerCastFire;
 
@@ -62,11 +67,27 @@ public class PlayerControllerCore : MonoBehaviour
     void Update()
     {
         ReadInput();
+        UpdateAnimator();
     }
 
     private void FixedUpdate()
     {
         if (lockMovement) return;
+
+        if (knockback != null && knockback.IsActive)
+        {
+            Vector2 kbDelta = knockback.ConsumeDelta();
+
+            if (kbDelta != Vector2.zero)
+            {
+                // Use your existing collision resolution, but it expects a delta.
+                ApplyDeltaWithCollision(kbDelta);
+            }
+
+            // Optional: disable player control while being knocked back
+            return;
+        }
+
 
         CheckIce();
 
@@ -78,6 +99,28 @@ public class PlayerControllerCore : MonoBehaviour
         {
             Move();
         }
+    }
+    void UpdateAnimator()
+    {
+        Vector2 dirSource = input != Vector2.zero ? input : FacingDirection;
+        Vector2Int dir = Get8Direction(dirSource);
+
+        if (dir.x != 0)
+            spriteRenderer.flipX = dir.x < 0;
+
+        dir = RemapToRight(dir);
+
+        animator.SetInteger("DirX", dir.x);
+        animator.SetInteger("DirY", dir.y);
+        animator.SetFloat("Speed", input.sqrMagnitude);
+    }
+
+    Vector2Int RemapToRight(Vector2Int dir)
+    {
+        if (dir.x < 0)
+            dir.x = 1;
+
+        return dir;
     }
 
     void ReadInput()
@@ -184,5 +227,60 @@ public class PlayerControllerCore : MonoBehaviour
         Vector3Int tilePos = tileMap.WorldToCell(worldPos);
 
         return tilePos;
+    }
+
+    Vector2Int Get8Direction(Vector2 dir)
+    {
+        if (dir == Vector2.zero)
+            return Vector2Int.zero;
+
+        dir.Normalize();
+
+        float absX = Mathf.Abs(dir.x);
+        float absY = Mathf.Abs(dir.y);
+
+        const float diagonalThreshold = 0.35f;
+
+        int x = 0;
+        int y = 0;
+
+        if (absX > diagonalThreshold && absY > diagonalThreshold)
+        {
+            x = dir.x > 0 ? 1 : -1;
+            y = dir.y > 0 ? 1 : -1;
+        }
+        else if (absX > absY)
+        {
+            x = dir.x > 0 ? 1 : -1;
+            y = 0;
+        }
+        else
+        {
+            x = 0;
+            y = dir.y > 0 ? 1 : -1;
+        }
+
+        return new Vector2Int(x, y);
+    }
+
+    public void ActivateDarkness()
+    {
+        spellHandler.EnableDarkness();
+    }
+
+    public void DeactivateDarkness()
+    {
+        spellHandler.DisableDarkness();
+    }
+
+    void ApplyDeltaWithCollision(Vector2 delta)
+    {
+        if (delta == Vector2.zero) return;
+
+        Vector2 pos = transform.position;
+        Vector3 temp = CanWalkCollision(pos, delta);
+
+        if (temp != Vector3.zero)
+            transform.position += temp;
     }
 }

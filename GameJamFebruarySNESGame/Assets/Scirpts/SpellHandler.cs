@@ -6,10 +6,17 @@ public class SpellHandler : MonoBehaviour
 {
     PlayerControllerCore playerController;
 
+    [Header("Fire")]
     [SerializeField] int fireRange = 3;
     [SerializeField] float fireSpreadSpeed = 0.5f;
+    [Header("Ice")]
     [SerializeField] int iceRange = 5;
     [SerializeField] float iceSpreadSpeed = 0.5f;
+    [Header("Plants")]
+
+    [Header("Light")]
+    [SerializeField] GameObject darknessOverlay;
+    [SerializeField] GameObject lightOverlay;
 
     private bool isCasting = false;
 
@@ -157,5 +164,27 @@ public class SpellHandler : MonoBehaviour
         if (isCasting) return;
 
         //Get overlay and then if the overlay is darkness, remove or lessen the darkness
+        if (darknessOverlay.activeSelf)
+        {
+            darknessOverlay.SetActive(false);
+            if (!lightOverlay.activeSelf)
+            {
+                lightOverlay.SetActive(true);
+            }
+        }
+    }
+
+    public void EnableDarkness()
+    {
+        if (!darknessOverlay.activeSelf)
+        {
+            darknessOverlay.SetActive(true);
+        }
+    }
+
+    public void DisableDarkness()
+    {
+        darknessOverlay.SetActive(false);
+        lightOverlay.SetActive(false);
     }
 }

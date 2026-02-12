@@ -1,4 +1,8 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 
 public class MainMenuHandler : MonoBehaviour
 {
@@ -7,36 +11,151 @@ public class MainMenuHandler : MonoBehaviour
     private bool pressAnyKeyHighlighted;
     [SerializeField] float flashSpeed;
     float timer;
-
-    [Header("MainMenu")]
-    [SerializeField] GameObject playButton;
-    [SerializeField] GameObject continueButton;
-    [SerializeField] GameObject exitButton;
+    [SerializeField] float timeUnitlPlayerCanContinue = 5;
 
     [Header("SaveSlots")]
-    [SerializeField] GameObject backButton;
     [SerializeField] GameObject slot1;
     [SerializeField] GameObject slot2;
     [SerializeField] GameObject slot3;
 
     [Header("LogicHelpers")]
     public MenuState menuState;
+    [SerializeField] private InputActionReference moveSelector;
+    [SerializeField] private InputActionReference confirmKey;
+    private int selector = 0;
+    private bool anyButtonPressed = false;
+    private float helperTimer = 0;
+    private bool canMove = true;
+    [SerializeField] string defaultScene;
 
     public enum MenuState
     {
         PressAnyKey,
-        MainMenu,
-        SaveSlots
+        SaveSlots,
+        Waiting
     }
 
     private void Start()
     {
-        menuState = MenuState.PressAnyKey;
+        menuState = MenuState.Waiting;
+        StartCoroutine(PlayIntro());
+    }
+    private void OnEnable()
+    {
+        InputSystem.onAnyButtonPress.Call(OnAnyButtonPressed);
+        confirmKey.action.performed += ConfirmKey;
+    }
+
+    private void OnDisable()
+    {
+        confirmKey.action.performed -= ConfirmKey;
+    }
+
+    void ConfirmKey(InputAction.CallbackContext context)
+    {
+        if(menuState == MenuState.SaveSlots)
+        {
+            menuState = MenuState.Waiting;
+            StartCoroutine(LaunchGame());
+        }
+    }
+
+    IEnumerator LaunchGame()
+    {
+        if(string.IsNullOrEmpty(defaultScene))
+        {
+            Debug.Log("Failed to init game, defaultscene missing");
+            yield break;
+        }
+
+        SaveHandler.instance.BeginLoadFromSlot(selector);
+
+        string targetScene;
+        if (SaveHandler.instance.GetSaveDataForSlot(selector) != null)
+        {
+            SaveData data = SaveHandler.instance.GetSaveDataForSlot(selector);
+            targetScene = data.sceneName;
+        }
+        else
+        {
+            targetScene = defaultScene;
+        }
+            
+        yield return new WaitForSeconds(2);
+        SceneHandler.instance.LoadScene(targetScene);
+    }
+
+    void OnAnyButtonPressed(InputControl control)
+    {
+        if (menuState == MenuState.PressAnyKey)
+        {
+            anyButtonPressed = true;
+        }
     }
 
     private void Update()
     {
+        if (menuState == MenuState.Waiting) return;
+
+        Vector2 input = moveSelector.action.ReadValue<Vector2>();
+
+        if (canMove && input.x > 0.5f)
+        {
+            selector++;
+            canMove = false;
+        }
+        else if( canMove && input.x < -0.5f)
+        {
+            selector--;
+            canMove= false;
+        }
+
+        selector = Mathf.Clamp(selector, 0, 2);
+
+        if(Mathf.Abs(input.x) < 0.1f)
+        {
+            canMove = true;
+        }
+
         toggleMenuElements();
+
+        if(menuState == MenuState.PressAnyKey)
+        {
+            helperTimer += Time.deltaTime;
+            if(helperTimer > timeUnitlPlayerCanContinue)
+            {
+                if (anyButtonPressed)
+                {
+                    menuState = MenuState.Waiting;
+                    StartCoroutine(GoToSaveslot());
+                }
+            }
+        }
+
+        if(menuState == MenuState.SaveSlots)
+        {
+            switch (selector)
+            {
+                case 0:
+                    slot1.GetComponent<SaveSlotHighlighter>().HighlightThisSlot();
+                    slot2.GetComponent<SaveSlotHighlighter>().DehighlightThisSlot();
+                    slot3.GetComponent<SaveSlotHighlighter>().DehighlightThisSlot();
+                    break;
+                case 1:
+                    slot2.GetComponent<SaveSlotHighlighter>().HighlightThisSlot();
+                    slot3.GetComponent<SaveSlotHighlighter>().DehighlightThisSlot();
+                    slot1.GetComponent<SaveSlotHighlighter>().DehighlightThisSlot();
+                    break;
+                case 2:
+                    slot3.GetComponent<SaveSlotHighlighter>().HighlightThisSlot();
+                    slot2.GetComponent<SaveSlotHighlighter>().DehighlightThisSlot();
+                    slot1.GetComponent<SaveSlotHighlighter>().DehighlightThisSlot();
+                    break;
+                default:
+                    Debug.Log("Selected a saveslot that doesnt exist");
+                    break;
+            }
+        }
 
         timer = timer + Time.deltaTime;
         if(timer > flashSpeed)
@@ -68,40 +187,36 @@ public class MainMenuHandler : MonoBehaviour
             case MenuState.PressAnyKey:
                 if (!pressAnyKey.activeSelf) pressAnyKey.SetActive(true);
                 //
-                if (playButton.activeSelf) playButton.SetActive(false);
-                if (continueButton.activeSelf) continueButton.SetActive(false);
-                if (exitButton.activeSelf) exitButton.SetActive(false);
-                if (backButton.activeSelf) backButton.SetActive(false);
-                if (slot1.activeSelf) slot1.SetActive(false);
-                if (slot2.activeSelf) slot2.SetActive(false);
-                if (slot3.activeSelf) slot3.SetActive(false);
-                break;
-            case MenuState.MainMenu:
-                if (!playButton.activeSelf) playButton.SetActive(true);
-                if (!continueButton.activeSelf) continueButton.SetActive(true);
-                if (!exitButton.activeSelf) exitButton.SetActive(true);
-                //
-                if (pressAnyKey.activeSelf) pressAnyKey.SetActive(false);
-                if (backButton.activeSelf) backButton.SetActive(false);
                 if (slot1.activeSelf) slot1.SetActive(false);
                 if (slot2.activeSelf) slot2.SetActive(false);
                 if (slot3.activeSelf) slot3.SetActive(false);
                 break;
             case MenuState.SaveSlots:
-                if (!backButton.activeSelf) backButton.SetActive(true);
                 if (!slot1.activeSelf) slot1.SetActive(true);
                 if (!slot2.activeSelf) slot2.SetActive(true);
                 if (!slot3.activeSelf) slot3.SetActive(true);
                 //
                 if (pressAnyKey.activeSelf) pressAnyKey.SetActive(false);
-                if (playButton.activeSelf) playButton.SetActive(false);
-                if (continueButton.activeSelf) continueButton.SetActive(false);
-                if (exitButton.activeSelf) exitButton.SetActive(false);
+                break;
+            case MenuState.Waiting:
+                    //Debug.Log("Currently Waiting");
                 break;
             default:
                 Debug.Log("No state, this shouldn't happen");
                 break;
         }
+    }
+
+    IEnumerator PlayIntro()
+    {
+        yield return new WaitForSeconds(5);
+        menuState = MenuState.PressAnyKey;
+    }
+
+    IEnumerator GoToSaveslot()
+    {
+        yield return new WaitForSeconds(3);
+        menuState = MenuState.SaveSlots;
     }
 }
 
