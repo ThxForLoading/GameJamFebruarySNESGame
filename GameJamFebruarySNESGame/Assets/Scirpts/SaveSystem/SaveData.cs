@@ -10,5 +10,8 @@ public class SaveData
 
     public float playTime;
 
+    public int totalCollected;
+    public string[] collectedIds;
+    
     //Additional stuff
 }

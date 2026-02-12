@@ -59,12 +59,17 @@ public class SaveHandler : MonoBehaviour
 
     public void SaveGame()
     {
+        var progress = CollectibleProgress.Instance;
+
         SaveData saveData = new SaveData()
         {
             playerPos = GameObject.FindGameObjectWithTag("Player").transform.position,
             mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D.gameObject.name,
             sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name,
-            playTime = sessionPlaytime
+            playTime = sessionPlaytime,
+
+            totalCollected = progress ? progress.TotalCollected : 0,
+            collectedIds = progress ? progress.ExportIds() : null
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData, true));
@@ -86,6 +91,11 @@ public class SaveHandler : MonoBehaviour
         FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D = GameObject.Find(saveData.mapBoundary).GetComponent<PolygonCollider2D>();
 
         sessionPlaytime = saveData.playTime;
+
+        if (CollectibleProgress.Instance != null)
+        {
+            CollectibleProgress.Instance.ImportIds(saveData.collectedIds);
+        } 
     }
 
     public SaveData GetSaveDataForSlot(int slot)
@@ -112,5 +122,11 @@ public class SaveHandler : MonoBehaviour
         FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D = GameObject.Find(data.mapBoundary).GetComponent<PolygonCollider2D>();
 
         sessionPlaytime = data.playTime;
+
+        if (CollectibleProgress.Instance != null)
+        {
+            CollectibleProgress.Instance.ImportIds(data.collectedIds);
+        }
+            
     }
 }
