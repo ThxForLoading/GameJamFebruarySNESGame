@@ -109,4 +109,9 @@ public class TilemapChanger : MonoBehaviour
     {
         plantTileMap.SetTile (position, plantTopTile);
     }
+
+    public Tilemap GetFireTileMap()
+    {
+        return fireTileMap;
+    }
 }

@@ -63,6 +63,13 @@ public class PlayerControllerCore : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        xRButton.action.performed -= PlayerCastIce;
+        yLButton.action.performed -= PlayerCastFire;
+        bRButton.action.performed -= PlayerCastPlant;
+    }
+
     private void PlayerCastFire(InputAction.CallbackContext context)
     {
         spellHandler.castFire();

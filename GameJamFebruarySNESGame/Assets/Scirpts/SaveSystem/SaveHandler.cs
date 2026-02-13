@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SaveHandler : MonoBehaviour
 {
-    private string saveLocation;
+    private string SaveLocation => Path.Combine( Application.persistentDataPath, saveName + currentSlot + ".json");
     public string saveName = "saveSlot";
     public int currentSlot = 0;
 
@@ -47,11 +47,6 @@ public class SaveHandler : MonoBehaviour
         pendingLoadData = null;
     }
 
-    void Start()
-    {
-        saveLocation = Path.Combine(Application.persistentDataPath, saveName + currentSlot + ".json");
-    }
-
     private void Update()
     {
         sessionPlaytime += Time.deltaTime;
@@ -72,19 +67,19 @@ public class SaveHandler : MonoBehaviour
             collectedIds = progress ? progress.ExportIds() : null
         };
 
-        File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData, true));
+        File.WriteAllText(SaveLocation, JsonUtility.ToJson(saveData, true));
     }
 
     public void LoadGame()
     {
-        if (!File.Exists(saveLocation))
+        if (!File.Exists(SaveLocation))
         {
             Debug.Log($"No save found in slot {currentSlot}, creating new one.");
             SaveGame();
             return;
         }
 
-        SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
+        SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(SaveLocation));
 
         GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPos;
 
