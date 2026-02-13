@@ -86,6 +86,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "X+RButton",
+                    "type": "Button",
+                    "id": "0e0c6e89-61a8-43a0-b399-244bc5831313",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Y+LButton",
+                    "type": "Button",
+                    "id": "7ccad98a-9e63-423b-9bd8-795a309fded2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "B+RButton",
+                    "type": "Button",
+                    "id": "85347b34-e5bd-4d56-918a-8ed1eea43cd4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -297,6 +324,105 @@
                     "action": "ShoulderRight",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Button With One Modifier",
+                    "id": "8a967163-cad2-43fb-b431-c80ed5f602aa",
+                    "path": "ButtonWithOneModifier(modifiersOrder=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X+RButton",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Modifier",
+                    "id": "b3185d00-1562-4d62-a2bf-4a53945b6cc6",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X+RButton",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button",
+                    "id": "db785f9a-75e3-4cb5-824e-f5bdc10e9001",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X+RButton",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button With One Modifier",
+                    "id": "d15677b8-5622-4326-9644-97a6ee33bdfb",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "B+RButton",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Modifier",
+                    "id": "ba4a6744-a90b-4001-98ce-68f6c4938118",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "B+RButton",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button",
+                    "id": "25406c02-6e51-44d3-a4dc-00f8c208c1ca",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "B+RButton",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button With One Modifier",
+                    "id": "bb438521-f2b2-4c2c-8eac-fbb44eab154a",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y+LButton",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Modifier",
+                    "id": "b9cea86b-2d83-446a-b935-323542100add",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y+LButton",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button",
+                    "id": "60b3c7aa-8c60-40b5-b762-d5e63b74b9f7",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y+LButton",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

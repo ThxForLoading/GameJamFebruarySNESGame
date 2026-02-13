@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 5602391699527846879}
   - component: {fileID: 4163258859802137040}
   - component: {fileID: 1758991404765127636}
+  - component: {fileID: 2389749600759243621}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -922,10 +923,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerIdleStages
   animator: {fileID: 5682177462372199431}
   controller: {fileID: 5511102182454224172}
-  drowsyAfter: 20
-  sleepAfter: 30
+  drowsyAfter: 10
+  sleepAfter: 20
   minMoveDistancePerSecond: 0.02
   activityActions: []
+--- !u!114 &2389749600759243621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4318152617701025656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11481cc6d01564240b491ae0ba9f84b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MashDetector
+  shoulderLeft: {fileID: 1025766077560385193, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  shoulderRight: {fileID: 2149209667177526113, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  timeWindow: 1
+  pressesRequired: 6
+  durationToTrigger: 1
+  drainRate: 0.2
 --- !u!1 &4594298737544580084
 GameObject:
   m_ObjectHideFlags: 0
