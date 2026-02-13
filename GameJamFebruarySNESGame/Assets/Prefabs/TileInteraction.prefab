@@ -45,17 +45,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TilemapChanger
   waterTileMap: {fileID: 0}
-  iceTile: {fileID: 11400000, guid: 2d01dc0cff7944149ab67642d0abc4fe, type: 2}
+  iceTile: {fileID: 11400000, guid: f94b7a3011eaead4a94b31528bc3d0ea, type: 2}
   iceTileMap: {fileID: 0}
   obstacles: {fileID: 0}
   fireTileMap: {fileID: 0}
-  fireTile: {fileID: 11400000, guid: e853af97b54547946ac872b3e06f5a2e, type: 2}
+  fireTile: {fileID: 11400000, guid: c0f7fcf6f5c29e54188786f35a75e67b, type: 2}
   fireDestructibleTileMap: {fileID: 0}
   plantTileMap: {fileID: 0}
   plantBottomTile: {fileID: 11400000, guid: da5a757d378daad44844b44c02790488, type: 2}
   plantTile: {fileID: 11400000, guid: 3d0612467392a5943a5fc3c379c76693, type: 2}
   plantTopTile: {fileID: 11400000, guid: 8b8c846c7539b5b418a1e663d1609daf, type: 2}
   fertileGround: {fileID: 0}
-  groundPlantTile: {fileID: 11400000, guid: 668bae73d5bc7da48b7d88aa4b6a7a32, type: 2}
+  groundPlantTile: {fileID: 11400000, guid: 3b61070962b7d034daccc6db75c961a9, type: 2}
   groundTileMap: {fileID: 0}
   savePointsTileMap: {fileID: 0}
