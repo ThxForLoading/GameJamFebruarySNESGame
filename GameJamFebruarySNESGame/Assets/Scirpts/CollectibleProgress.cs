@@ -1,9 +1,13 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CollectibleProgress : MonoBehaviour
 {
     public static CollectibleProgress Instance { get; private set; }
+
+    public event Action OnProgressLoaded;
+    public event Action<int> OnTotalChanged; // passes new total
 
     private readonly HashSet<string> collected = new();
     public int TotalCollected => collected.Count;
@@ -20,7 +24,12 @@ public class CollectibleProgress : MonoBehaviour
     public bool TryCollect(string id)
     {
         if (string.IsNullOrEmpty(id)) return false;
-        return collected.Add(id);
+
+        bool added = collected.Add(id);
+        if (added)
+            OnTotalChanged?.Invoke(TotalCollected);
+
+        return added;
     }
 
     public string[] ExportIds()
@@ -33,11 +42,14 @@ public class CollectibleProgress : MonoBehaviour
     public void ImportIds(string[] ids)
     {
         collected.Clear();
-        if (ids == null) return;
-        for (int i = 0; i < ids.Length; i++)
+        if (ids != null)
         {
-            if (!string.IsNullOrEmpty(ids[i]))
-                collected.Add(ids[i]);
+            for (int i = 0; i < ids.Length; i++)
+                if (!string.IsNullOrEmpty(ids[i]))
+                    collected.Add(ids[i]);
         }
+
+        OnProgressLoaded?.Invoke();
+        OnTotalChanged?.Invoke(TotalCollected);
     }
 }
