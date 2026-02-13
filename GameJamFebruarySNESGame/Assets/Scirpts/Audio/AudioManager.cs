@@ -55,19 +55,22 @@ public class AudioManager : MonoBehaviour
     {
         switch (scene.name)
         {
-            case "Menu":
+            case "MainMenu":
                 PlayMusic(menuMusic);
                 break;
-            case "YellowLevel":
+            case "Reef":
                 PlayMusic(yellowMusic);
                 break;
-            case "MushroomLevel":
+            case "Town":
+                PlayMusic(yellowMusic);
+                break;
+            case "Fungal":
                 PlayMusic(mushroomMusic);
                 break;
-            case "SwampLevel":
+            case "Swamp":
                 PlayMusic(swampMusic);
                 break;
-            case "IceLevel":
+            case "Tundra":
                 PlayMusic(iceMusic);
                 break;
             case "Credits":

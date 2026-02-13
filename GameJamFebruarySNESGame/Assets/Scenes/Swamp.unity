@@ -44569,6 +44569,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneTransition
       objectReference: {fileID: 0}
+    - target: {fileID: 6230135749175804519, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
+      propertyPath: targetScene
+      value: Town
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230135749175804519, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
+      propertyPath: sceneTargetSpawn
+      value: SpawnSawmp
+      objectReference: {fileID: 0}
     - target: {fileID: 8210574296236634618, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.2

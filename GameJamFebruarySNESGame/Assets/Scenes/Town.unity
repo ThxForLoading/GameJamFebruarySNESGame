@@ -131,6 +131,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneTransitionSwamp
       objectReference: {fileID: 0}
+    - target: {fileID: 6230135749175804519, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
+      propertyPath: targetScene
+      value: Swamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230135749175804519, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
+      propertyPath: sceneTargetSpawn
+      value: SpawnSwamp
+      objectReference: {fileID: 0}
     - target: {fileID: 8210574296236634618, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.3
@@ -203,6 +211,14 @@ PrefabInstance:
     - target: {fileID: 99042719859285531, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
       propertyPath: m_Name
       value: SceneTransitionFungal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230135749175804519, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
+      propertyPath: targetScene
+      value: Fungal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230135749175804519, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
+      propertyPath: sceneTargetSpawn
+      value: SpawnFungal
       objectReference: {fileID: 0}
     - target: {fileID: 8210574296236634618, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1897,6 +1913,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneTransitionTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 6230135749175804519, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
+      propertyPath: targetScene
+      value: Reef
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230135749175804519, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
+      propertyPath: sceneTargetSpawn
+      value: SpawnReef
+      objectReference: {fileID: 0}
     - target: {fileID: 8210574296236634618, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -54.08
@@ -2540,6 +2564,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneTransitionIce
       objectReference: {fileID: 0}
+    - target: {fileID: 6230135749175804519, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
+      propertyPath: targetScene
+      value: Tundra
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230135749175804519, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
+      propertyPath: sceneTargetSpawn
+      value: SpawnIce
+      objectReference: {fileID: 0}
     - target: {fileID: 8210574296236634618, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.91
@@ -3024,7 +3056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1428966951
 Transform:
   m_ObjectHideFlags: 0
@@ -98775,11 +98807,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014994837626136385, guid: 1dd536ff0ba609f4a8feb93c0fcbccfb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -59.85
+      value: -7.71
       objectReference: {fileID: 0}
     - target: {fileID: 6014994837626136385, guid: 1dd536ff0ba609f4a8feb93c0fcbccfb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.67
+      value: -8.37
       objectReference: {fileID: 0}
     - target: {fileID: 6014994837626136385, guid: 1dd536ff0ba609f4a8feb93c0fcbccfb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -98994,7 +99026,7 @@ Transform:
   m_GameObject: {fileID: 1794078527}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.85, y: -14.67, z: -10}
+  m_LocalPosition: {x: -7.71, y: -8.37, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99209,7 +99241,7 @@ Transform:
   m_GameObject: {fileID: 1931646338}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -54.134205, y: -14.739203, z: -10}
+  m_LocalPosition: {x: -7.71, y: -8.37, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

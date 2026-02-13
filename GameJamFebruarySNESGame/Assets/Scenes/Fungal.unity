@@ -78404,7 +78404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1391994795}
   m_Layer: 0
-  m_Name: SpawnTutorial
+  m_Name: SpawnFungal
   m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79772,6 +79772,14 @@ PrefabInstance:
     - target: {fileID: 99042719859285531, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
       propertyPath: m_Name
       value: SceneTransition
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230135749175804519, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
+      propertyPath: targetScene
+      value: Town
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230135749175804519, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
+      propertyPath: sceneTargetSpawn
+      value: SpawnFungal
       objectReference: {fileID: 0}
     - target: {fileID: 8210574296236634618, guid: b620cbfbb3ed8c343a6b8f0477583a8d, type: 3}
       propertyPath: m_LocalPosition.x
