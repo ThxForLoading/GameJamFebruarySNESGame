@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IDamageable, IHealable
 {
+
     public int maxHp = 6;
     public int hp;
+    [SerializeField] private ResolverFrameDriver frameDriver;
 
     private PlayerKnockback knockback;
 
@@ -28,6 +30,14 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IHealable
     {
         if (amount <= 0) return;
         hp = Mathf.Min(maxHp, hp + amount);
+
+        if (hp >= 3)
+            frameDriver.SetCategory("Full");
+        else if (hp == 2)
+            frameDriver.SetCategory("Yellow");
+        else
+            frameDriver.SetCategory("Red");
+
         Debug.Log($"Healed by {amount}. HP is now: {hp}/{maxHp}");
     }
 
@@ -39,6 +49,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IHealable
 
         if (knockback != null)
             knockback.Trigger(hitDirection);
+
+        if (hp >= 3)
+            frameDriver.SetCategory("Full");
+        else if (hp == 2)
+            frameDriver.SetCategory("Yellow");
+        else
+            frameDriver.SetCategory("Red");
 
         if (hp == 0)
         {
