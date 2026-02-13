@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1819677252871633816, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
+      propertyPath: dialogueText
+      value: Day! E wfr [studying] tdnra [Slimes], ucky berd...
+      objectReference: {fileID: 0}
     - target: {fileID: 2903448911359234658, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -33668,6 +33672,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1819677252871633816, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
+      propertyPath: dialogueText
+      value: Ynu ucky berd lecdt ia rn rtuoeh ynu oqnifiky heh mnt avam sdasj tda
+        [waterfall] em tda [cave]!
+      objectReference: {fileID: 0}
     - target: {fileID: 2903448911359234658, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -78853,6 +78862,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1819677252871633816, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
+      propertyPath: dialogueText
+      value: Enjoy the Slime Show!
+      objectReference: {fileID: 0}
     - target: {fileID: 2903448911359234658, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -78903,7 +78916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6995245266616012321, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: m_Name
-      value: NPC (3)
+      value: Sign
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -79019,6 +79032,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1819677252871633816, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
+      propertyPath: dialogueText
+      value: Ynu'qa mnt snnk ft fkk... ynu fqa fm ucky berd! Avam iy oqarremc [X
+        + R] ynu wnukhm't ia snnk amnucd. Ft tdft onemt avam wftaq [freezes].
+      objectReference: {fileID: 0}
     - target: {fileID: 2903448911359234658, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -80114,6 +80132,7 @@ SceneRoots:
   - {fileID: 749638897}
   - {fileID: 1631850384}
   - {fileID: 1827344723}
+  - {fileID: 21203718}
   - {fileID: 1391994795}
   - {fileID: 2128001186}
   - {fileID: 824364629}
@@ -80123,6 +80142,5 @@ SceneRoots:
   - {fileID: 2050699206}
   - {fileID: 1463008509}
   - {fileID: 733237608}
-  - {fileID: 21203718}
   - {fileID: 270809914}
   - {fileID: 1206433541}
