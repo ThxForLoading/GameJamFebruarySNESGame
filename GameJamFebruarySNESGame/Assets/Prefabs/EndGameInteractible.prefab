@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2afea2dd067f0174c8991541a4f36e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndGameInteractable
-  requiredCount: 3
+  requiredCount: 6
   creditsSceneName: Credits
 --- !u!1 &1027406639742800834
 GameObject:
