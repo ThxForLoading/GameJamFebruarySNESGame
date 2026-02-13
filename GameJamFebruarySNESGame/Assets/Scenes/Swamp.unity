@@ -517,6 +517,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1819677252871633816, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
+      propertyPath: dialogueText
+      value: Awwww. Fm ucky berd keja ynu rdnukh ia [grilled] iy [Y + L]! Ib et laktr
+        eseskar et rdnukh lakt ynu tnn. [Nom]!
+      objectReference: {fileID: 0}
     - target: {fileID: 2903448911359234658, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -841,6 +846,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1819677252871633816, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
+      propertyPath: dialogueText
+      value: Heh ynu jmnw tdaqa wfr fm [island] nm tda [western most] ofqt nb nuq
+        kfmh? Yaf et qasamtky bknnhah! Hehm't ynu [fall down from] tdaqa? Ynu fqa
+        f qafkky ucky berd itw.
+      objectReference: {fileID: 0}
     - target: {fileID: 2903448911359234658, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: m_Sprite
       value: 
