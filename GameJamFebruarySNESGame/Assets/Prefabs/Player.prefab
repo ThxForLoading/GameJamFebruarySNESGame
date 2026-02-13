@@ -663,8 +663,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpellHandler
   fireRange: 3
   fireSpreadSpeed: 0.5
+  fireTileMap: {fileID: 0}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 1
+  fireDamage: 2
+  fireHitBoxScale: {x: 0.9, y: 0.9}
   iceRange: 5
   iceSpreadSpeed: 0.5
+  plantRange: 5
+  plantGrowSpeed: 0.5
   darknessOverlay: {fileID: 7284258398313520874}
   lightOverlay: {fileID: 2585026110051274163}
 --- !u!114 &5653784733277816931

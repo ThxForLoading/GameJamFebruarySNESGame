@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using UnityEngine.WSA;
 
 public class SpellHandler : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class SpellHandler : MonoBehaviour
     [Header("Fire")]
     [SerializeField] int fireRange = 3;
     [SerializeField] float fireSpreadSpeed = 0.5f;
+    [SerializeField] private Tilemap fireTileMap;     // drag the same one used by TilemapChanger
+    [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private int fireDamage = 1;
+    [SerializeField] private Vector2 fireHitBoxScale = new Vector2(0.9f, 0.9f);
     [Header("Ice")]
     [SerializeField] int iceRange = 5;
     [SerializeField] float iceSpreadSpeed = 0.5f;
@@ -85,6 +91,7 @@ public class SpellHandler : MonoBehaviour
             }
 
             changer.PlaceFireTileAt(tile);
+            DamageEnemiesOnCell(tile);
             yield return new WaitForSeconds(fireSpreadSpeed);
             StartCoroutine(extinguishFire(tile));
         }
@@ -94,7 +101,30 @@ public class SpellHandler : MonoBehaviour
     IEnumerator extinguishFire(Vector3Int target)
     {
         yield return new WaitForSeconds(fireSpreadSpeed + 0.3f);
+        DamageEnemiesOnCell(target);
         changer.RemoveFire(target);
+    }
+    private void DamageEnemiesOnCell(Vector3Int cellPos)
+    {
+        Vector3 worldCenter = fireTileMap.GetCellCenterWorld(cellPos);
+
+        Vector3 cellSize = fireTileMap.cellSize;
+        Vector2 boxSize = new Vector2(cellSize.x * fireHitBoxScale.x, cellSize.y * fireHitBoxScale.y);
+
+        Collider2D[] hits = Physics2D.OverlapBoxAll(worldCenter, boxSize, 0f, enemyMask);
+
+        foreach (var hit in hits)
+        {
+            var dmg = hit.GetComponentInParent<IDamageable>();
+            if (dmg == null) continue;
+
+            Vector2 hitPoint = hit.ClosestPoint(worldCenter);
+            Vector2 dir = ((Vector2)hit.transform.position - (Vector2)worldCenter);
+            if (dir.sqrMagnitude < 0.0001f) dir = Vector2.up;
+            dir.Normalize();
+
+            dmg.TakeDamage(fireDamage, dir);
+        }
     }
 
     public void castIce()
