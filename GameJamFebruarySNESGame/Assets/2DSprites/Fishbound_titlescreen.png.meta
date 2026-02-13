@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 6deb047bf7b7a4b4e981574d76edd3c5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3890424120346560936
+    second: Fishbound_titlescreen_0
+  - first:
+      213: 6013029520005228147
+    second: Fishbound_titlescreen_1
+  - first:
+      213: 5447517063379088664
+    second: Fishbound_titlescreen_2
+  - first:
+      213: -1613092825164939892
+    second: Fishbound_titlescreen_3
+  - first:
+      213: -5339776906872944186
+    second: Fishbound_titlescreen_4
+  - first:
+      213: 5281504353738467504
+    second: Fishbound_titlescreen_5
+  - first:
+      213: 4225409057445536221
+    second: Fishbound_titlescreen_6
+  - first:
+      213: 7826958810425543850
+    second: Fishbound_titlescreen_7
+  - first:
+      213: 4246584314827079672
+    second: Fishbound_titlescreen_8
+  - first:
+      213: -5062638865308897993
+    second: Fishbound_titlescreen_9
+  - first:
+      213: -2951037486183511147
+    second: Fishbound_titlescreen_10
+  - first:
+      213: 3160609745652123927
+    second: Fishbound_titlescreen_11
+  - first:
+      213: 752794857043253436
+    second: Fishbound_titlescreen_12
+  - first:
+      213: -1220091066234996726
+    second: Fishbound_titlescreen_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 114
+        width: 357
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856b129ffdf620ac0800000000000000
+      internalID: -3890424120346560936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 79
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37669d37d72927350800000000000000
+      internalID: 6013029520005228147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 79
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815f69e28e7799b40800000000000000
+      internalID: 5447517063379088664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_3
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 79
+        width: 97
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8dff4e3f942d99e0800000000000000
+      internalID: -1613092825164939892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_4
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 119
+        width: 272
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c9010ec13d45e5b0800000000000000
+      internalID: -5339776906872944186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_5
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 19
+        width: 112
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8a2442a3cab4940800000000000000
+      internalID: 5281504353738467504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_6
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 79
+        width: 97
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd162cb862ba3aa30800000000000000
+      internalID: 4225409057445536221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_7
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 119
+        width: 257
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac470fa191fe9c60800000000000000
+      internalID: 7826958810425543850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_8
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 79
+        width: 47
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ff730a5fe5eeea30800000000000000
+      internalID: 4246584314827079672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_9
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 79
+        width: 97
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73d2d2766c4edb9b0800000000000000
+      internalID: -5062638865308897993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_10
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 79
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59b8b25aa0fcb07d0800000000000000
+      internalID: -2951037486183511147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_11
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 79
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7198b3b61ddbcdb20800000000000000
+      internalID: 3160609745652123927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_12
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 79
+        width: 97
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb8ddca1fe6727a00800000000000000
+      internalID: 752794857043253436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishbound_titlescreen_13
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 79
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a087f6bb3ad511fe0800000000000000
+      internalID: -1220091066234996726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Fishbound_titlescreen_0: -3890424120346560936
+      Fishbound_titlescreen_1: 6013029520005228147
+      Fishbound_titlescreen_10: -2951037486183511147
+      Fishbound_titlescreen_11: 3160609745652123927
+      Fishbound_titlescreen_12: 752794857043253436
+      Fishbound_titlescreen_13: -1220091066234996726
+      Fishbound_titlescreen_2: 5447517063379088664
+      Fishbound_titlescreen_3: -1613092825164939892
+      Fishbound_titlescreen_4: -5339776906872944186
+      Fishbound_titlescreen_5: 5281504353738467504
+      Fishbound_titlescreen_6: 4225409057445536221
+      Fishbound_titlescreen_7: 7826958810425543850
+      Fishbound_titlescreen_8: 4246584314827079672
+      Fishbound_titlescreen_9: -5062638865308897993
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
