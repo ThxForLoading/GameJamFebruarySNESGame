@@ -78059,6 +78059,99 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1206433541
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 70372652274153167, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: m_Name
+      value: TileInteraction
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974249376057516780, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.89249
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974249376057516780, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -27.21112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974249376057516780, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974249376057516780, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974249376057516780, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974249376057516780, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974249376057516780, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974249376057516780, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974249376057516780, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974249376057516780, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722269519131311693, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: obstacles
+      value: 
+      objectReference: {fileID: 648644882}
+    - target: {fileID: 2722269519131311693, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: iceTileMap
+      value: 
+      objectReference: {fileID: 1198296566}
+    - target: {fileID: 2722269519131311693, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: fireTileMap
+      value: 
+      objectReference: {fileID: 861061411}
+    - target: {fileID: 2722269519131311693, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: plantTileMap
+      value: 
+      objectReference: {fileID: 1285474656}
+    - target: {fileID: 2722269519131311693, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: waterTileMap
+      value: 
+      objectReference: {fileID: 1969712465}
+    - target: {fileID: 2722269519131311693, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: fertileGround
+      value: 
+      objectReference: {fileID: 1352269244}
+    - target: {fileID: 2722269519131311693, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: groundTileMap
+      value: 
+      objectReference: {fileID: 1108130139}
+    - target: {fileID: 2722269519131311693, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: savePointsTileMap
+      value: 
+      objectReference: {fileID: 163328573}
+    - target: {fileID: 2722269519131311693, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
+      propertyPath: fireDestructibleTileMap
+      value: 
+      objectReference: {fileID: 741001906}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 26bef9127ada19a40b464c55fda94c61, type: 3}
 --- !u!1001 &1281492753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80032,3 +80125,4 @@ SceneRoots:
   - {fileID: 733237608}
   - {fileID: 21203718}
   - {fileID: 270809914}
+  - {fileID: 1206433541}

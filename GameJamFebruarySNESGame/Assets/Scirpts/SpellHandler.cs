@@ -52,6 +52,8 @@ public class SpellHandler : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("AudioManager");
 
         if (audioManager == null) Debug.Log("Audiomanager was not found, playing no audio");
+
+        if(fireTileMap == null) fireTileMap = changer.GetFireTileMap();
     }
 
     public void castFire()
