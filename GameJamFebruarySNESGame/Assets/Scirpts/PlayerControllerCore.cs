@@ -9,6 +9,13 @@ public class PlayerControllerCore : MonoBehaviour
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference aButton;
     [SerializeField] private InputActionReference bButton;
+
+    [SerializeField] private InputActionReference xRButton;
+    [SerializeField] private InputActionReference yLButton;
+    [SerializeField] private InputActionReference bRButton;
+
+
+
     [SerializeField] private LayerMask obstacleLayer;
     [SerializeField] private LayerMask iceLayer;
     [SerializeField] private LayerMask waterLayer;
@@ -46,8 +53,9 @@ public class PlayerControllerCore : MonoBehaviour
     {
         spellHandler = GetComponent<SpellHandler>();
         knockback = GetComponent<PlayerKnockback>();
-        aButton.action.performed += PlayerCastIce;
-        bButton.action.performed += PlayerCastFire;
+        xRButton.action.performed += PlayerCastIce;
+        yLButton.action.performed += PlayerCastFire;
+        bRButton.action.performed += PlayerCastPlant;
 
         if(GameObject.FindGameObjectWithTag("TileHandler") != null)
         {
@@ -63,6 +71,11 @@ public class PlayerControllerCore : MonoBehaviour
     private void PlayerCastIce(InputAction.CallbackContext context)
     {
         spellHandler.castIce();
+    }
+
+    private void PlayerCastPlant(InputAction.CallbackContext context)
+    {
+        spellHandler.castPlant();
     }
 
     void Update()

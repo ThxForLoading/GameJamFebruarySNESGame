@@ -11192,14 +11192,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5653784733277816931, guid: 1dd536ff0ba609f4a8feb93c0fcbccfb, type: 3}
-      propertyPath: hp
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5653784733277816931, guid: 1dd536ff0ba609f4a8feb93c0fcbccfb, type: 3}
-      propertyPath: maxHp
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6014994837626136385, guid: 1dd536ff0ba609f4a8feb93c0fcbccfb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11244,10 +11236,6 @@ PrefabInstance:
       propertyPath: fireTileMap
       value: 
       objectReference: {fileID: 603051322}
-    - target: {fileID: 8454742035610823611, guid: 1dd536ff0ba609f4a8feb93c0fcbccfb, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 129
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
