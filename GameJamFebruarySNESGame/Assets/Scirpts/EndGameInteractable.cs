@@ -1,10 +1,15 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EndGameInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField] private int requiredCount = 5;
     [SerializeField] private string creditsSceneName = "Credits";
+
+    GameObject sceneHandler;
+    private void Awake()
+    {
+        sceneHandler = GameObject.FindGameObjectWithTag("SceneHandler");
+    }
 
     public void Interact(PlayerInteractor interactor)
     {
@@ -16,8 +21,11 @@ public class EndGameInteractable : MonoBehaviour, IInteractable
             Debug.Log($"Need {requiredCount - prog.TotalCollected} more.");
             return;
         }
-
-        SceneManager.LoadScene(creditsSceneName);
+        
+        if (sceneHandler != null)
+        {
+            sceneHandler.GetComponent<SceneHandler>().LoadScene(creditsSceneName);
+        }
     }
 
     public string GetPrompt()
