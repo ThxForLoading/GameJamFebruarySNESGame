@@ -10,11 +10,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IHealable
     private PlayerKnockback knockback;
 
     private GameObject audioManager;
-
+    GameObject saveHandler;
     void Awake()
     {
         hp = maxHp;
         knockback = GetComponent<PlayerKnockback>();
+        saveHandler = GameObject.FindGameObjectWithTag("SaveHandler");
     }
 
     private void Start()
@@ -60,7 +61,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IHealable
         if (hp == 0)
         {
             Debug.Log("Player died");
-            // respawn player?
+            if (saveHandler != null)
+            {
+                saveHandler.GetComponent<SaveHandler>().BeginLoadFromSlot(saveHandler.GetComponent<SaveHandler>().currentSlot);
+            }
         }
     }
 
