@@ -603,12 +603,14 @@ GameObject:
   - component: {fileID: 5511102182454224172}
   - component: {fileID: 9050417159123206953}
   - component: {fileID: 7511925561391286609}
+  - component: {fileID: 8725835085495842814}
   - component: {fileID: 7512942014283122620}
   - component: {fileID: 5653784733277816931}
   - component: {fileID: 2831509668843783158}
   - component: {fileID: 8454742035610823611}
   - component: {fileID: 5602391699527846879}
   - component: {fileID: 4163258859802137040}
+  - component: {fileID: 1758991404765127636}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -743,6 +745,19 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &8725835085495842814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4318152617701025656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96fd48df331457542a6d8ed56be86be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationRefs
+  animatorOnChild: {fileID: 0}
 --- !u!114 &7512942014283122620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,6 +908,24 @@ MonoBehaviour:
   noHighlight: {fileID: 6992524750211503066}
   moveSelector: {fileID: 3119172567759272096, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   confirmKey: {fileID: 4818524347499601303, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+--- !u!114 &1758991404765127636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4318152617701025656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c963f82ffff3fc43abe5183ac9be214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerIdleStages
+  animator: {fileID: 5682177462372199431}
+  controller: {fileID: 5511102182454224172}
+  drowsyAfter: 20
+  sleepAfter: 30
+  minMoveDistancePerSecond: 0.02
+  activityActions: []
 --- !u!1 &4594298737544580084
 GameObject:
   m_ObjectHideFlags: 0

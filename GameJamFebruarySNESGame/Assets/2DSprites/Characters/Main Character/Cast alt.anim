@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle UP
+  m_Name: Cast alt
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -23,8 +23,35 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4
+        value: 15
         inSlope: 0
+        outSlope: 10
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.1
+        value: 16
+        inSlope: 10
+        outSlope: 10
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.2
+        value: 17
+        inSlope: 10
+        outSlope: 9.999999
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.3
+        value: 18
+        inSlope: 9.999999
         outSlope: 0
         tangentMode: 69
         weightedMode: 0
@@ -42,7 +69,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -2249548051428728521, guid: c1a49987d25e9a4498bfa03d79b001e2, type: 3}
+      value: {fileID: -2214252204357212626, guid: c1a49987d25e9a4498bfa03d79b001e2, type: 3}
+    - time: 0.1
+      value: {fileID: -3754925327029088499, guid: c1a49987d25e9a4498bfa03d79b001e2, type: 3}
+    - time: 0.2
+      value: {fileID: 1044922573193961964, guid: c1a49987d25e9a4498bfa03d79b001e2, type: 3}
+    - time: 0.3
+      value: {fileID: -2773209131998368713, guid: c1a49987d25e9a4498bfa03d79b001e2, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -57,15 +90,6 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 0
       attribute: 3052944589
       script: {fileID: 11500000, guid: f7018720cab312745b56edfab3129939, type: 3}
       typeID: 114
@@ -73,14 +97,26 @@ AnimationClip:
       isPPtrCurve: 0
       isIntCurve: 0
       isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -2249548051428728521, guid: c1a49987d25e9a4498bfa03d79b001e2, type: 3}
+    - {fileID: -2214252204357212626, guid: c1a49987d25e9a4498bfa03d79b001e2, type: 3}
+    - {fileID: -3754925327029088499, guid: c1a49987d25e9a4498bfa03d79b001e2, type: 3}
+    - {fileID: 1044922573193961964, guid: c1a49987d25e9a4498bfa03d79b001e2, type: 3}
+    - {fileID: -2773209131998368713, guid: c1a49987d25e9a4498bfa03d79b001e2, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.3166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -102,8 +138,35 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4
+        value: 15
         inSlope: 0
+        outSlope: 10
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.1
+        value: 16
+        inSlope: 10
+        outSlope: 10
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.2
+        value: 17
+        inSlope: 10
+        outSlope: 9.999999
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.3
+        value: 18
+        inSlope: 9.999999
         outSlope: 0
         tangentMode: 69
         weightedMode: 0

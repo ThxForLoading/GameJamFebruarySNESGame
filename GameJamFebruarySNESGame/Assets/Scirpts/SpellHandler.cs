@@ -25,6 +25,8 @@ public class SpellHandler : MonoBehaviour
     [SerializeField] GameObject darknessOverlay;
     [SerializeField] GameObject lightOverlay;
 
+
+    private Animator animator;
     private bool isCasting = false;
 
     TilemapChanger changer;
@@ -56,6 +58,8 @@ public class SpellHandler : MonoBehaviour
     {
         if (isCasting) return;
 
+        animator = playerController.GetComponentInParent<PlayerAnimationRefs>().Animator;
+        animator.SetTrigger("Cast");
         //Go forward the range of tiles and place fire, then trigger fire interactions on the affected tiles
         Vector3Int startingLocation = playerController.GetSelectedTile();
         Vector2 direction = playerController.FacingDirection;
@@ -88,6 +92,7 @@ public class SpellHandler : MonoBehaviour
             if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayFireAudio();
             StartCoroutine(fireInLine(affectedTiles));
         }
+
     }
 
     IEnumerator fireInLine(Vector3Int[] affectedTiles)
@@ -142,6 +147,8 @@ public class SpellHandler : MonoBehaviour
     {
         if(isCasting) return;
 
+        animator = playerController.GetComponentInParent<PlayerAnimationRefs>().Animator;
+        animator.SetTrigger("Cast");
         //Go forward and replace water with ice tiles in the desired range
         Vector3Int startingLocation = playerController.GetSelectedTile();
         Vector2 direction = playerController.FacingDirection;
@@ -174,6 +181,7 @@ public class SpellHandler : MonoBehaviour
             if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayIceAudio();
             StartCoroutine(iceInLine(affectedTiles));
         }
+        
     }
 
     IEnumerator iceInLine(Vector3Int[] affectedTiles)
@@ -197,6 +205,9 @@ public class SpellHandler : MonoBehaviour
     public void castPlant()
     {
         if (isCasting) return;
+
+        animator = playerController.GetComponentInParent<PlayerAnimationRefs>().Animator;
+        animator.SetTrigger("Cast");
 
         Vector3Int startingLocation = playerController.GetSelectedTile();
 
@@ -225,6 +236,8 @@ public class SpellHandler : MonoBehaviour
             if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayPlantAudio();
             changer.PlaceGroundPlantTileAt(startingLocation);
         }
+
+        
     }
 
     IEnumerator GrowPlantInLine(Vector3Int[] affectedTiles)
@@ -255,6 +268,9 @@ public class SpellHandler : MonoBehaviour
     public void castLight()
     {
         if (isCasting) return;
+
+        animator = playerController.GetComponentInParent<PlayerAnimationRefs>().Animator;
+        animator.SetTrigger("Cast");
 
         if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayLightAudio();
 
