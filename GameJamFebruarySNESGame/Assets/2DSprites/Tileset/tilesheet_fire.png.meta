@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 9a3c287dbbe1c7c489d6329e1d1c657c
+guid: 2c305ddac5d31fc48aa3f646a90dd642
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7639556627634520662
-    second: Tilesheet_Pots_0
+      213: -8147795259716291726
+    second: tilesheet_fire_0
   - first:
-      213: -3711581978651006049
-    second: Tilesheet_Pots_1
+      213: -3752106694953085101
+    second: tilesheet_fire_1
   - first:
-      213: -5758244550245972073
-    second: Tilesheet_Pots_2
+      213: -4232203382730940923
+    second: tilesheet_fire_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,7 +106,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tilesheet_Pots_0
+      name: tilesheet_fire_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 65203a7d648250a60800000000000000
-      internalID: 7639556627634520662
+      spriteID: 273bff151673dee80800000000000000
+      internalID: -8147795259716291726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilesheet_Pots_1
+      name: tilesheet_fire_1
       rect:
         serializedVersion: 2
         x: 16
@@ -143,30 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9be3cfeadfcd7cc0800000000000000
-      internalID: -3711581978651006049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tilesheet_Pots_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 79782cc071b9610b0800000000000000
-      internalID: -5758244550245972073
+      spriteID: 357d4f727d6ddebc0800000000000000
+      internalID: -3752106694953085101
       vertices: []
       indices: 
       edges: []
@@ -175,7 +153,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e1ca2d6b9ae464d41abbb440f7eba604
+    spriteID: 27752459424bf4742aef0879c93a071d
     internalID: 0
     vertices: []
     indices: 
@@ -187,9 +165,8 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Tilesheet_Pots_0: 7639556627634520662
-      Tilesheet_Pots_1: -3711581978651006049
-      Tilesheet_Pots_2: -5758244550245972073
+      tilesheet_fire_0: -8147795259716291726
+      tilesheet_fire_1: -3752106694953085101
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
