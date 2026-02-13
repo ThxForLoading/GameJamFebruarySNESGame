@@ -291,7 +291,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1819677252871633816, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: dialogueText
-      value: We a
+      value: Wa fem't em Zakhf, ucky berd! Hnm't iqafj ly [pots]!
       objectReference: {fileID: 0}
     - target: {fileID: 2903448911359234658, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: m_Sprite
@@ -2125,8 +2125,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1819677252871633816, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: dialogueText
-      value: Psst. I put up signs around to help you. They think I am one of them.
-        They think you are an ugly fish. I can confirm the ugly part.
+      value: La fmh ly [brother ]knva [growing plants]! Da wamt [missing] rnla tela
+        fcn tdnucd... Ad, wdftavaq, da'kk snla ifsj fr ruqa fr ynu'qa ucky.
       objectReference: {fileID: 0}
     - target: {fileID: 2903448911359234658, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: m_Sprite
@@ -96348,8 +96348,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1819677252871633816, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: dialogueText
-      value: Psst. I put up signs around to help you. They think I am one of them.
-        They think you are an ugly fish. I can confirm the ugly part.
+      value: Ucky berd, e wamt tn tda [Tundra] fmh rfw f [gap] e snukhm't cat tn
+        em tda [south east].
       objectReference: {fileID: 0}
     - target: {fileID: 2903448911359234658, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: m_Sprite
@@ -101069,8 +101069,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1819677252871633816, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: dialogueText
-      value: Psst. I put up signs around to help you. They think I am one of them.
-        They think you are an ugly fish. I can confirm the ugly part.
+      value: Ucky berd, tdaqa er mn rdfla em qummemc bqnl [Slimes]. Hnm't bnqcat
+        tdnucd tday [HATE FIRE]!
       objectReference: {fileID: 0}
     - target: {fileID: 2903448911359234658, guid: 26ba29fabb1b0914e8941724d5c2ea27, type: 3}
       propertyPath: m_Sprite
