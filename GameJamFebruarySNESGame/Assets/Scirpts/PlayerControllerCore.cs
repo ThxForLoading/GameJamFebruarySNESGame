@@ -27,7 +27,6 @@ public class PlayerControllerCore : MonoBehaviour
     public float collisionRadius = 0.2f;
 
     private SpellHandler spellHandler;
-
  
 
     private Vector2 input;

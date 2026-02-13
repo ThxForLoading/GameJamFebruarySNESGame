@@ -7,13 +7,21 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IHealable
 
     private PlayerKnockback knockback;
 
-    
+    private GameObject audioManager;
 
     void Awake()
     {
         hp = maxHp;
         knockback = GetComponent<PlayerKnockback>();
     }
+
+    private void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+
+        if (audioManager == null) Debug.Log("Audiomanager was not found, playing no audio");
+    }
+
     public bool CanHeal => hp < maxHp;
 
     public void Heal(int amount)
@@ -25,6 +33,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IHealable
 
     public void TakeDamage(int amount, Vector2 hitDirection)
     {
+        if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayHitAudio();
         hp = Mathf.Max(0, hp - amount);
         Debug.Log($"Player took {amount} damage. HP: {hp}");
 

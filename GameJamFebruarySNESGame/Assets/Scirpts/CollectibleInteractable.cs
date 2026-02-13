@@ -21,6 +21,8 @@ public class CollectibleInteractable : MonoBehaviour, IInteractable
 
     private bool collectedThisSession;
 
+    private GameObject audioManager;
+
 #if UNITY_EDITOR
     private void OnValidate()
     {
@@ -34,6 +36,10 @@ public class CollectibleInteractable : MonoBehaviour, IInteractable
         var prog = CollectibleProgress.Instance;
         if (prog != null && prog.IsCollected(collectibleId))
             gameObject.SetActive(false);
+
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+
+        if (audioManager == null) Debug.Log("Audiomanager was not found, playing no audio");
     }
 
     public void Interact(PlayerInteractor interactor)
@@ -109,6 +115,8 @@ public class CollectibleInteractable : MonoBehaviour, IInteractable
         var anim = interactor.GetComponentInParent<Animator>();
         if (anim != null && !string.IsNullOrEmpty(playerAnimTrigger))
             anim.SetTrigger(playerAnimTrigger);
+
+        if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayCollectAudio();
 
         // 4) Wait and unlock
         yield return new WaitForSeconds(lockMovementSeconds);

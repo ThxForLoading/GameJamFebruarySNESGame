@@ -29,6 +29,8 @@ public class SpellHandler : MonoBehaviour
 
     TilemapChanger changer;
 
+    private GameObject audioManager;
+
     private void Awake()
     {
         playerController = GetComponent<PlayerControllerCore>();
@@ -41,6 +43,13 @@ public class SpellHandler : MonoBehaviour
             Debug.Log("Playercontroller missing, Tilemapchanger missing or Spellhandler not correctly assigned");
             isCasting = true;
         }
+    }
+
+    private void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+
+        if (audioManager == null) Debug.Log("Audiomanager was not found, playing no audio");
     }
 
     public void castFire()
@@ -76,6 +85,7 @@ public class SpellHandler : MonoBehaviour
 
         if (affectedTiles.Length > 0)
         {
+            if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayFireAudio();
             StartCoroutine(fireInLine(affectedTiles));
         }
     }
@@ -161,6 +171,7 @@ public class SpellHandler : MonoBehaviour
 
         if (affectedTiles.Length > 0)
         {
+            if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayIceAudio();
             StartCoroutine(iceInLine(affectedTiles));
         }
     }
@@ -203,6 +214,7 @@ public class SpellHandler : MonoBehaviour
 
             if (affectedTiles.Length > 0)
             {
+                if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayPlantAudio();
                 StartCoroutine(GrowPlantInLine(affectedTiles));
             }
 
@@ -210,6 +222,7 @@ public class SpellHandler : MonoBehaviour
         else if (changer.CanPlacePlantGround(startingLocation))
         {
             //place tile with plant over ground
+            if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayPlantAudio();
             changer.PlaceGroundPlantTileAt(startingLocation);
         }
     }
@@ -242,6 +255,8 @@ public class SpellHandler : MonoBehaviour
     public void castLight()
     {
         if (isCasting) return;
+
+        if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayLightAudio();
 
         //Get overlay and then if the overlay is darkness, remove or lessen the darkness
         if (darknessOverlay.activeSelf)
