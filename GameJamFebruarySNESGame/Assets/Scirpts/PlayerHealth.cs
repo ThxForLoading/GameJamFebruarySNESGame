@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IHealable
             Debug.Log("Player died");
             if (saveHandler != null)
             {
-                saveHandler.GetComponent<SaveHandler>().BeginLoadFromSlot(saveHandler.GetComponent<SaveHandler>().currentSlot);
+                saveHandler.GetComponent<SaveHandler>().LoadGame();
             }
         }
     }
