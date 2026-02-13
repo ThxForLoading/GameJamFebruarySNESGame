@@ -28,6 +28,9 @@ public class MainMenuHandler : MonoBehaviour
     private bool canMove = true;
     [SerializeField] string defaultScene;
 
+    bool playIntro = false;
+    [SerializeField] Animator animator;
+
     public enum MenuState
     {
         PressAnyKey,
@@ -38,6 +41,7 @@ public class MainMenuHandler : MonoBehaviour
     private void Start()
     {
         menuState = MenuState.Waiting;
+        animator.SetBool("PlayIntro",playIntro);
         StartCoroutine(PlayIntro());
     }
     private void OnEnable()
@@ -56,8 +60,17 @@ public class MainMenuHandler : MonoBehaviour
         if(menuState == MenuState.SaveSlots)
         {
             menuState = MenuState.Waiting;
-            StartCoroutine(LaunchGame());
+
+            StartCoroutine(PlayIntroCutscene());
         }
+    }
+
+    IEnumerator PlayIntroCutscene()
+    {
+        playIntro = true;
+        animator.SetBool("PlayIntro", playIntro);
+        yield return new WaitForSeconds(12);
+        StartCoroutine(LaunchGame());
     }
 
     IEnumerator LaunchGame()
@@ -215,7 +228,7 @@ public class MainMenuHandler : MonoBehaviour
 
     IEnumerator GoToSaveslot()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(0.5f);
         menuState = MenuState.SaveSlots;
     }
 }

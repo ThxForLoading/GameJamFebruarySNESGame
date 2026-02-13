@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: b2b985c2f769f9644b5f7028e4f9f6d6
+guid: 96bd616583f02f045b00f645a6483498
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6663181299408003337
-    second: Textbox_0
+      213: -8147795259716291726
+    second: tilesheet_fire_0
+  - first:
+      213: -3752106694953085101
+    second: tilesheet_fire_1
+  - first:
+      213: -4232203382730940923
+    second: tilesheet_fire_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Textbox_0
+      name: tilesheet_fire_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 256
-        height: 75
+        width: 15
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7fe92c649ef9783a0800000000000000
-      internalID: -6663181299408003337
+      spriteID: 273bff151673dee80800000000000000
+      internalID: -8147795259716291726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesheet_fire_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357d4f727d6ddebc0800000000000000
+      internalID: -3752106694953085101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesheet_fire_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 9
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50e9d1352713445c0800000000000000
+      internalID: -4232203382730940923
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Textbox_0: -6663181299408003337
+      tilesheet_fire_0: -8147795259716291726
+      tilesheet_fire_1: -3752106694953085101
+      tilesheet_fire_2: -4232203382730940923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

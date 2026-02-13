@@ -10,6 +10,7 @@ public class SaveSlotHighlighter : MonoBehaviour
     [SerializeField] private TMP_Text titleText;
     [SerializeField] private TMP_Text sceneText;
     [SerializeField] private TMP_Text timeText;
+    [SerializeField] private TMP_Text collectibleText;
 
     private void OnEnable()
     {
@@ -26,12 +27,14 @@ public class SaveSlotHighlighter : MonoBehaviour
             titleText.text = "Save Slot " + (slotIndex + 1);
             sceneText.text = "Stage: -";
             timeText.text = "Playtime: -";
+            collectibleText.text = "Fish: -";
         }
         else
         {
             titleText.text = "Save Slot " + (slotIndex + 1);
             sceneText.text = "Stage: " + data.sceneName;
             timeText.text = "Playtime: " + FormatTime(data.playTime);
+            collectibleText.text = "Fish: " + data.totalCollected;
         }
     }
 
