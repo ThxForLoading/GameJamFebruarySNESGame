@@ -118,7 +118,7 @@ public class PlayerControllerCore : MonoBehaviour
     {
         Vector2 dirSource;
 
-        if (lockMovement)
+        if (lockMovement || isSliding)
         {
             dirSource = FacingDirection;
             animator.SetFloat("Speed", 0f);
