@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 5682177462372199431}
   - component: {fileID: 2237236676448862828}
   - component: {fileID: 9208781725684355609}
+  - component: {fileID: 7621176421972787175}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -477,7 +478,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.875, y: 1.125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -517,10 +518,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteResolver
-  m_CategoryHash: 0.0000000018291957
+  m_CategoryHash: 7.115679e-39
   m_labelHash: 0.00041268076
   m_SpriteKey: 0
-  m_SpriteHash: 264998304
+  m_SpriteHash: 275338836
 --- !u!114 &9208781725684355609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,7 +535,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrary
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 94aa8cd2c626bcd4e934fe4e8f5d4cf3, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 6c76b773780416b4cad4b7e43810bdfd, type: 3}
+--- !u!114 &7621176421972787175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043238729580814034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7018720cab312745b56edfab3129939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResolverFrameDriver
+  resolver: {fileID: 2237236676448862828}
+  category: Full
+  labels:
+  - Character_Sheet_0
+  - Character_Sheet_1
+  - Character_Sheet_2
+  - Character_Sheet_3
+  - Character_Sheet_4
+  - Character_Sheet_5
+  - Character_Sheet_6
+  - Character_Sheet_7
+  - Character_Sheet_8
+  - Character_Sheet_9
+  - Character_Sheet_10
+  - Character_Sheet_11
+  - Character_Sheet_12
+  - Character_Sheet_13
+  - Character_Sheet_14
+  - Character_Sheet_15
+  - Character_Sheet_16
+  - Character_Sheet_17
+  - Character_Sheet_18
+  - Character_Sheet_19
+  - Character_Sheet_20
+  - Character_Sheet_21
+  - Character_Sheet_22
+  - Character_Sheet_23
+  - Character_Sheet_24
+  - Character_Sheet_25
+  - Character_Sheet_26
+  - Character_Sheet_27
+  - Character_Sheet_28
+  - Character_Sheet_29
+  - Character_Sheet_30
+  - Character_Sheet_31
+  - Character_Sheet_32
+  - Character_Sheet_33
+  - Character_Sheet_34
+  - Character_Sheet_35
+  - Character_Sheet_36
+  - Character_Sheet_37
+  - Character_Sheet_38
+  frame: 0
 --- !u!1 &4318152617701025656
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHp: 4
   hp: 4
+  driver: {fileID: 0}
 --- !u!114 &2831509668843783158
 MonoBehaviour:
   m_ObjectHideFlags: 0
