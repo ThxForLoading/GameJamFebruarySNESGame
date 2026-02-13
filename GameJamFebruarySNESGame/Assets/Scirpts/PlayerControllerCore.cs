@@ -13,6 +13,7 @@ public class PlayerControllerCore : MonoBehaviour
     [SerializeField] private LayerMask iceLayer;
     [SerializeField] private LayerMask waterLayer;
     [SerializeField] private LayerMask savePointLayer;
+    [SerializeField] private LayerMask fireDestructibleLayer;
     [SerializeField] public bool lockMovement;
 
     [SerializeField] private Animator animator;
@@ -26,7 +27,6 @@ public class PlayerControllerCore : MonoBehaviour
     public float collisionRadius = 0.2f;
 
     private SpellHandler spellHandler;
-
  
 
     private Vector2 input;
@@ -215,7 +215,7 @@ public class PlayerControllerCore : MonoBehaviour
 
     Vector3 CanWalkCollision(Vector2 pos, Vector2 delta)
     {
-        LayerMask collisionMask = obstacleLayer | waterLayer | savePointLayer;
+        LayerMask collisionMask = obstacleLayer | waterLayer | savePointLayer | fireDestructibleLayer;
 
         Vector3 temp = new Vector3();
         if (!Physics2D.OverlapCircle(pos + new Vector2(delta.x, 0), collisionRadius, collisionMask))
