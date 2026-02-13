@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4166873792257216634}
   - component: {fileID: 2903448911359234658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 3825304303494963611}
   - component: {fileID: 1819677252871633816}
   - component: {fileID: 2627267572983974471}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
