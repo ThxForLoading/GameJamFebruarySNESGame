@@ -651,6 +651,9 @@ MonoBehaviour:
   move: {fileID: 3119172567759272096, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   aButton: {fileID: 4818524347499601303, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   bButton: {fileID: 1989535138368068065, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  xRButton: {fileID: -690775725908612887, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  yLButton: {fileID: -1181862687465621044, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  bRButton: {fileID: 4744122262086823512, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1024

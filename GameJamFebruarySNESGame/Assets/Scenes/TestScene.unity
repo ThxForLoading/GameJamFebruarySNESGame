@@ -11192,6 +11192,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5511102182454224172, guid: 1dd536ff0ba609f4a8feb93c0fcbccfb, type: 3}
+      propertyPath: bRButton
+      value: 
+      objectReference: {fileID: 4744122262086823512, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    - target: {fileID: 5511102182454224172, guid: 1dd536ff0ba609f4a8feb93c0fcbccfb, type: 3}
+      propertyPath: xRButton
+      value: 
+      objectReference: {fileID: -690775725908612887, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    - target: {fileID: 5511102182454224172, guid: 1dd536ff0ba609f4a8feb93c0fcbccfb, type: 3}
+      propertyPath: yLButton
+      value: 
+      objectReference: {fileID: -1181862687465621044, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
     - target: {fileID: 6014994837626136385, guid: 1dd536ff0ba609f4a8feb93c0fcbccfb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
