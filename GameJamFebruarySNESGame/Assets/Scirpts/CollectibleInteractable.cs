@@ -13,7 +13,6 @@ public class CollectibleInteractable : MonoBehaviour, IInteractable
     [Header("Player Feedback")]
     [SerializeField] private string playerAnimTrigger = "Collect";
     [SerializeField] private float lockMovementSeconds = 0.6f;
-    [SerializeField] private Animator playerAnim;
 
     [Header("Visual Swap")]
     [SerializeField] private SpriteRenderer idleSprite;
@@ -157,6 +156,7 @@ public class CollectibleInteractable : MonoBehaviour, IInteractable
         }
 
         // Trigger PLAYER animator (reliable)
+        var playerAnim = interactor.GetComponentInParent<PlayerAnimationRefs>().Animator;
         if (playerAnim != null && !string.IsNullOrEmpty(playerAnimTrigger))
             playerAnim.SetTrigger(playerAnimTrigger);
 

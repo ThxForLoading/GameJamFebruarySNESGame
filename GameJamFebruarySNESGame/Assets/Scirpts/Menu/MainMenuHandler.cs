@@ -67,9 +67,13 @@ public class MainMenuHandler : MonoBehaviour
 
     IEnumerator PlayIntroCutscene()
     {
+        slot1.SetActive(false);
+        slot2.SetActive(false);
+        slot3.SetActive(false);
+
         playIntro = true;
         animator.SetBool("PlayIntro", playIntro);
-        yield return new WaitForSeconds(12);
+        yield return new WaitForSeconds(7);
         StartCoroutine(LaunchGame());
     }
 

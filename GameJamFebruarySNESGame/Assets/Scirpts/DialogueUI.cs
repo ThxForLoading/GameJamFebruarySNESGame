@@ -13,6 +13,8 @@ public class DialogueUI : MonoBehaviour
     private Coroutine typingRoutine;
     private bool isTyping;
 
+    private GameObject audioManager;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -24,10 +26,19 @@ public class DialogueUI : MonoBehaviour
         Hide();
     }
 
+    private void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+
+        if (audioManager == null) Debug.Log("Audiomanager was not found, playing no audio");
+    }
+
     public void Show(string text)
     {
         if (typingRoutine != null)
             StopCoroutine(typingRoutine);
+
+        if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayTalkAudio();
 
         root.SetActive(true);
         typingRoutine = StartCoroutine(TypeWords(text));
@@ -37,6 +48,8 @@ public class DialogueUI : MonoBehaviour
     {
         if (typingRoutine != null)
             StopCoroutine(typingRoutine);
+
+        if (audioManager != null) audioManager.GetComponent<AudioManager>().StopSFXAudio();
 
         root.SetActive(false);
         isTyping = false;

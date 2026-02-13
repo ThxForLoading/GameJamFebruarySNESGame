@@ -11,13 +11,10 @@ public class HealPotionPickup : MonoBehaviour
     [Header("Player Feedback")]
     [SerializeField] private string playerAnimTrigger = "SmashPotion";
     [SerializeField] private float lockMovementSeconds = 0.5f;
+    private Animator animator;
 
     [Header("Filter")]
     [SerializeField] private LayerMask playerMask;
-
-    [Header("Optional")]
-    [SerializeField] private bool autoSaveOnUse = true;
-    [SerializeField] private GameObject useVfxPrefab;
 
     private bool used;
 
@@ -38,21 +35,21 @@ public class HealPotionPickup : MonoBehaviour
         if (!consumeIfFullHealth && !healTarget.CanHeal)
             return;
 
-        healTarget.Heal(healAmount);
         used = true;
+        healTarget.Heal(healAmount);
 
-        // Feedback (lock + animation)
         var controller = other.GetComponentInParent<PlayerControllerCore>();
-        var animator = other.GetComponentInParent<Animator>();
-        StartCoroutine(UseSequence(controller, animator));
+        var animator = other.GetComponentInParent<PlayerAnimationRefs>().Animator;
+        
 
-        if (useVfxPrefab)
-            Instantiate(useVfxPrefab, transform.position, Quaternion.identity);
+
+        // Run sequence on PLAYER so disabling potion doesn't kill coroutine
+        if (controller != null)
+            controller.StartCoroutine(UseSequence(controller, animator));
+        else
+            StartCoroutine(UseSequence(controller, animator)); // fallback
 
         gameObject.SetActive(false);
-
-        if (autoSaveOnUse && SaveHandler.instance != null)
-            SaveHandler.instance.SaveGame();
     }
 
     private IEnumerator UseSequence(PlayerControllerCore controller, Animator animator)
@@ -62,7 +59,7 @@ public class HealPotionPickup : MonoBehaviour
         if (animator != null && !string.IsNullOrEmpty(playerAnimTrigger))
             animator.SetTrigger(playerAnimTrigger);
 
-        yield return new WaitForSeconds(lockMovementSeconds);
+        yield return new WaitForSecondsRealtime(lockMovementSeconds);
 
         if (controller != null) controller.lockMovement = false;
     }
