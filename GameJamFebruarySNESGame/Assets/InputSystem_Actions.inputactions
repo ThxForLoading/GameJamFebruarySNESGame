@@ -360,6 +360,39 @@
                 },
                 {
                     "name": "Button With One Modifier",
+                    "id": "e534dab9-f792-4972-93bf-84a09a8d8c5f",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X+RButton",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Modifier",
+                    "id": "41ca1f8b-9e11-43ec-b29c-8d67aa288882",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X+RButton",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button",
+                    "id": "d9263836-f6e4-4b5f-ab47-0899a148a3da",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X+RButton",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button With One Modifier",
                     "id": "d15677b8-5622-4326-9644-97a6ee33bdfb",
                     "path": "ButtonWithOneModifier",
                     "interactions": "",
