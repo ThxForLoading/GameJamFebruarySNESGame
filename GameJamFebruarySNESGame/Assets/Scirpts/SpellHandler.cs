@@ -89,7 +89,6 @@ public class SpellHandler : MonoBehaviour
 
         if (affectedTiles.Length > 0)
         {
-            if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayFireAudio();
             StartCoroutine(fireInLine(affectedTiles));
         }
 
@@ -97,6 +96,7 @@ public class SpellHandler : MonoBehaviour
 
     IEnumerator fireInLine(Vector3Int[] affectedTiles)
     {
+        bool playedSound = false;
         foreach (Vector3Int tile in affectedTiles)
         {
             if (!changer.CanPlaceFire(tile))
@@ -104,8 +104,13 @@ public class SpellHandler : MonoBehaviour
                 isCasting = false;
                 yield break;
             }
+            else if (!playedSound)
+            {
+                if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayFireAudio();
+                playedSound = true;
+            }
 
-            changer.PlaceFireTileAt(tile);
+                changer.PlaceFireTileAt(tile);
             changer.RemoveBurnableTile(tile);
             DamageEnemiesOnCell(tile);
             yield return new WaitForSeconds(fireSpreadSpeed);
@@ -178,7 +183,7 @@ public class SpellHandler : MonoBehaviour
 
         if (affectedTiles.Length > 0)
         {
-            if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayIceAudio();
+            
             StartCoroutine(iceInLine(affectedTiles));
         }
         
@@ -186,6 +191,7 @@ public class SpellHandler : MonoBehaviour
 
     IEnumerator iceInLine(Vector3Int[] affectedTiles)
     {
+        bool playedSound = false;
         foreach (Vector3Int tile in affectedTiles)
         {
             if (!changer.CanPlaceIce(tile))
@@ -193,9 +199,14 @@ public class SpellHandler : MonoBehaviour
                 isCasting = false;
                 yield break;
             }
-            
-            //Debug.Log("Creating Ice");
-            changer.RemoveWater(tile);
+            else if (!playedSound)
+            {
+                if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayIceAudio();
+                playedSound = true;
+            }
+
+                //Debug.Log("Creating Ice");
+                changer.RemoveWater(tile);
             changer.PlaceIceTileat(tile);
             yield return new WaitForSeconds(iceSpreadSpeed);
         }
