@@ -518,10 +518,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteResolver
-  m_CategoryHash: 7.115679e-39
+  m_CategoryHash: 0.0000000018291957
   m_labelHash: 0.00041268076
   m_SpriteKey: 0
-  m_SpriteHash: 275338836
+  m_SpriteHash: 264998304
 --- !u!114 &9208781725684355609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,9 +781,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4fc56d0a44d0d946af929fddb030c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHp: 4
-  hp: 4
-  driver: {fileID: 0}
+  maxHp: 3
+  hp: 3
+  frameDriver: {fileID: 7621176421972787175}
 --- !u!114 &2831509668843783158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,7 +838,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 129
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
