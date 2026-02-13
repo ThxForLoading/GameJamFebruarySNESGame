@@ -12,6 +12,7 @@ public class TilemapChanger : MonoBehaviour
     [Header("Fire")]
     [SerializeField] Tilemap fireTileMap;
     [SerializeField] Tile fireTile;
+    [SerializeField] Tilemap fireDestructibleTileMap;
     [Header("Plant")]
     [SerializeField] Tilemap plantTileMap;
     [SerializeField] Tile plantBottomTile;
@@ -72,6 +73,11 @@ public class TilemapChanger : MonoBehaviour
     public void RemoveFire(Vector3Int position)
     {
         fireTileMap.SetTile(position, null);
+    }
+
+    public void RemoveBurnableTile(Vector3Int position)
+    {
+        fireDestructibleTileMap.SetTile(position, null);
     }
 
     public void PlaceIceTileat(Vector3Int position)

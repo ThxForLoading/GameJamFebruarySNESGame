@@ -91,6 +91,7 @@ public class SpellHandler : MonoBehaviour
             }
 
             changer.PlaceFireTileAt(tile);
+            changer.RemoveBurnableTile(tile);
             DamageEnemiesOnCell(tile);
             yield return new WaitForSeconds(fireSpreadSpeed);
             StartCoroutine(extinguishFire(tile));

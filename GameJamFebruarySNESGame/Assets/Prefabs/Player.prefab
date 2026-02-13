@@ -604,6 +604,9 @@ MonoBehaviour:
   savePointLayer:
     serializedVersion: 2
     m_Bits: 2048
+  fireDestructibleLayer:
+    serializedVersion: 2
+    m_Bits: 16384
   lockMovement: 0
   animator: {fileID: 5682177462372199431}
   spriteRenderer: {fileID: 2392324638278129391}
@@ -697,7 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellHandler
   fireRange: 3
-  fireSpreadSpeed: 1
+  fireSpreadSpeed: 0.2
   fireTileMap: {fileID: 0}
   enemyMask:
     serializedVersion: 2
