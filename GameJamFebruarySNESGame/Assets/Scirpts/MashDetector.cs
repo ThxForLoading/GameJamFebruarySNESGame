@@ -96,7 +96,8 @@ public class MashDetector : MonoBehaviour
 
     private void OnDualMashTriggered()
     {
-        Debug.Log("Dual mash triggered! Spawn fire!");
+        var handler = GetComponentInParent<SpellHandler>();
+        handler.castLight();
     }
 
 }

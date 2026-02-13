@@ -25,6 +25,8 @@ public class SpellHandler : MonoBehaviour
     [SerializeField] GameObject darknessOverlay;
     [SerializeField] GameObject lightOverlay;
 
+
+    private Animator animator;
     private bool isCasting = false;
 
     TilemapChanger changer;
@@ -56,6 +58,8 @@ public class SpellHandler : MonoBehaviour
     {
         if (isCasting) return;
 
+        animator = playerController.GetComponentInParent<PlayerAnimationRefs>().Animator;
+        animator.SetTrigger("Cast");
         //Go forward the range of tiles and place fire, then trigger fire interactions on the affected tiles
         Vector3Int startingLocation = playerController.GetSelectedTile();
         Vector2 direction = playerController.FacingDirection;
@@ -85,13 +89,14 @@ public class SpellHandler : MonoBehaviour
 
         if (affectedTiles.Length > 0)
         {
-            if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayFireAudio();
             StartCoroutine(fireInLine(affectedTiles));
         }
+
     }
 
     IEnumerator fireInLine(Vector3Int[] affectedTiles)
     {
+        bool playedSound = false;
         foreach (Vector3Int tile in affectedTiles)
         {
             if (!changer.CanPlaceFire(tile))
@@ -99,8 +104,13 @@ public class SpellHandler : MonoBehaviour
                 isCasting = false;
                 yield break;
             }
+            else if (!playedSound)
+            {
+                if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayFireAudio();
+                playedSound = true;
+            }
 
-            changer.PlaceFireTileAt(tile);
+                changer.PlaceFireTileAt(tile);
             changer.RemoveBurnableTile(tile);
             DamageEnemiesOnCell(tile);
             yield return new WaitForSeconds(fireSpreadSpeed);
@@ -142,6 +152,8 @@ public class SpellHandler : MonoBehaviour
     {
         if(isCasting) return;
 
+        animator = playerController.GetComponentInParent<PlayerAnimationRefs>().Animator;
+        animator.SetTrigger("Cast");
         //Go forward and replace water with ice tiles in the desired range
         Vector3Int startingLocation = playerController.GetSelectedTile();
         Vector2 direction = playerController.FacingDirection;
@@ -171,13 +183,15 @@ public class SpellHandler : MonoBehaviour
 
         if (affectedTiles.Length > 0)
         {
-            if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayIceAudio();
+            
             StartCoroutine(iceInLine(affectedTiles));
         }
+        
     }
 
     IEnumerator iceInLine(Vector3Int[] affectedTiles)
     {
+        bool playedSound = false;
         foreach (Vector3Int tile in affectedTiles)
         {
             if (!changer.CanPlaceIce(tile))
@@ -185,9 +199,14 @@ public class SpellHandler : MonoBehaviour
                 isCasting = false;
                 yield break;
             }
-            
-            //Debug.Log("Creating Ice");
-            changer.RemoveWater(tile);
+            else if (!playedSound)
+            {
+                if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayIceAudio();
+                playedSound = true;
+            }
+
+                //Debug.Log("Creating Ice");
+                changer.RemoveWater(tile);
             changer.PlaceIceTileat(tile);
             yield return new WaitForSeconds(iceSpreadSpeed);
         }
@@ -197,6 +216,9 @@ public class SpellHandler : MonoBehaviour
     public void castPlant()
     {
         if (isCasting) return;
+
+        animator = playerController.GetComponentInParent<PlayerAnimationRefs>().Animator;
+        animator.SetTrigger("Cast");
 
         Vector3Int startingLocation = playerController.GetSelectedTile();
 
@@ -225,6 +247,8 @@ public class SpellHandler : MonoBehaviour
             if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayPlantAudio();
             changer.PlaceGroundPlantTileAt(startingLocation);
         }
+
+        
     }
 
     IEnumerator GrowPlantInLine(Vector3Int[] affectedTiles)
@@ -255,6 +279,9 @@ public class SpellHandler : MonoBehaviour
     public void castLight()
     {
         if (isCasting) return;
+
+        animator = playerController.GetComponentInParent<PlayerAnimationRefs>().Animator;
+        animator.SetTrigger("Cast");
 
         if (audioManager != null) audioManager.GetComponent<AudioManager>().PlayLightAudio();
 

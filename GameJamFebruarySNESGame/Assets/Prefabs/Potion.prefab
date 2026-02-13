@@ -99,8 +99,6 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 1
-  autoSaveOnUse: 1
-  useVfxPrefab: {fileID: 0}
 --- !u!1 &7154567314602391065
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,8 +178,8 @@ SpriteRenderer:
   m_SortingLayerID: 797578433
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.06169614, g: 1, b: 0.0047169924, a: 1}
+  m_Sprite: {fileID: -8827066345666639279, guid: 2a4ece2a0062b854abc9e866f76e3738, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

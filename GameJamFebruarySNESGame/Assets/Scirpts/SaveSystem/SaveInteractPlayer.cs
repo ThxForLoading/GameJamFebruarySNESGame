@@ -42,12 +42,17 @@ public class SaveInteractPlayer : MonoBehaviour
 
     public void BeginSaveInteraction()
     {
+        BeginSaveInteractionRoutine();
+    }
+
+    public Coroutine BeginSaveInteractionRoutine()
+    {
         controller.lockMovement = true;
         textBox.SetActive(true);
         textSavePrompt.SetActive(true);
         answerHolder.SetActive(true);
 
-        StartCoroutine(SelectAnswer());
+        return StartCoroutine(SelectAnswer());
     }
 
     IEnumerator SelectAnswer()
