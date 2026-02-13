@@ -952,7 +952,7 @@ MonoBehaviour:
   menuState: 2
   moveSelector: {fileID: 3119172567759272096, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   confirmKey: {fileID: 4818524347499601303, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  defaultScene: TestScene
+  defaultScene: Reef
   animator: {fileID: 117165517}
 --- !u!4 &1221579735
 Transform:

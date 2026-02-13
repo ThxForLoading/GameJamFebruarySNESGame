@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5920432298636193673}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point_b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7254026889139621859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Patrol_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6361370762153139836}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}

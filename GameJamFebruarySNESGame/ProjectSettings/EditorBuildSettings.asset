@@ -5,12 +5,33 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestTargetScene.unity
     guid: d28e1502ebb742b4fbfa495813728c41
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d9379a9c2ad20234ba994e3f22a81846
+  - enabled: 1
+    path: Assets/Scenes/Reef.unity
+    guid: 1e64cb81d982b3c43ae5ab05ffac0c87
+  - enabled: 1
+    path: Assets/Scenes/Town.unity
+    guid: b62315f0fe1741545a7aaad6c63b799f
+  - enabled: 1
+    path: Assets/Scenes/Swamp.unity
+    guid: b974d4938571d354d962bff8570b108a
+  - enabled: 1
+    path: Assets/Scenes/Fungal.unity
+    guid: ac3bd695a02f3c94b935e8b960efaec6
+  - enabled: 1
+    path: Assets/Scenes/Tundra.unity
+    guid: 8f0e91a111765734f9095f9181d1c645
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: c7c41817a903abf448d5950fcd2b584e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
