@@ -9,6 +9,7 @@ TagManager:
   - TilemapGrid
   - TileHandler
   - AudioManager
+  - SaveHandler
   layers:
   - Default
   - TransparentFX
