@@ -1,3 +1,4 @@
+using System.Collections;
 using System.IO;
 using Unity.Cinemachine;
 using UnityEditor.Overlays;
@@ -81,16 +82,28 @@ public class SaveHandler : MonoBehaviour
 
         SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(SaveLocation));
 
-        GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPos;
+        if (saveData == null) return;
 
-        FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D = GameObject.Find(saveData.mapBoundary).GetComponent<PolygonCollider2D>();
+        string targetScene = saveData.sceneName;
 
-        sessionPlaytime = saveData.playTime;
+        StartCoroutine(LoadSceneDelayed(saveData));
+    }
+
+    IEnumerator LoadSceneDelayed(SaveData data)
+    {
+        SceneHandler.instance.LoadScene(data.sceneName);
+        yield return new WaitForSeconds(2);
+
+        GameObject.FindGameObjectWithTag("Player").transform.position = data.playerPos;
+
+        FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D = GameObject.Find(data.mapBoundary).GetComponent<PolygonCollider2D>();
+
+        sessionPlaytime = data.playTime;
 
         if (CollectibleProgress.Instance != null)
         {
-            CollectibleProgress.Instance.ImportIds(saveData.collectedIds);
-        } 
+            CollectibleProgress.Instance.ImportIds(data.collectedIds);
+        }
     }
 
     public SaveData GetSaveDataForSlot(int slot)

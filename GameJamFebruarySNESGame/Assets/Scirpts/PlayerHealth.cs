@@ -63,6 +63,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IHealable
             Debug.Log("Player died");
             if (saveHandler != null)
             {
+                Debug.Log("Attempting to load");
                 saveHandler.GetComponent<SaveHandler>().LoadGame();
             }
         }

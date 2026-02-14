@@ -26,6 +26,11 @@ public class SceneHandler : MonoBehaviour
         fadeCanvas.alpha = 0f;
     }
 
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
+
     public void LoadScene(string sceneName)
     {
         StartCoroutine(LoadSceneWithFade(sceneName));

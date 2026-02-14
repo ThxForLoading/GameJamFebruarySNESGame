@@ -900,7 +900,7 @@ MonoBehaviour:
   iceAudio: {fileID: 8300000, guid: c642fd2cfe2893745b44b3c04a0106ac, type: 3}
   lightAudio: {fileID: 8300000, guid: 1d2e0a2ee6eaaca4cb10eb201b3af6a8, type: 3}
   talkAudio: {fileID: 8300000, guid: 8fc5dbdf3b0089641b70b2d681a73910, type: 3}
-  plantAudio: {fileID: 8300000, guid: 2cedf212d28ad0d45a4d11a04951a99b, type: 3}
+  plantAudio: {fileID: 8300000, guid: cb044b16397d33f48bb6d0cfcbbac656, type: 3}
   hitAudio: {fileID: 8300000, guid: 276a8d3c2a17e3e4fa7f28d0c2721ff4, type: 3}
   collectAudio: {fileID: 8300000, guid: ef813319f21f9ca478ac5185de5b1c72, type: 3}
   musicVolume: 0.053
