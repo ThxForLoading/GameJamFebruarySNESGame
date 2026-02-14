@@ -30,6 +30,7 @@ public class PlayerControllerCore : MonoBehaviour
 
     public float moveSpeed = 3f;
     public float collisionRadius = 0.2f;
+    public float collisionOffset = 0.1f;
 
     private SpellHandler spellHandler;
  
@@ -216,7 +217,7 @@ public class PlayerControllerCore : MonoBehaviour
     private void OnDrawGizmosSelected()
     { 
         Gizmos.color = Color.yellow; 
-        Gizmos.DrawWireSphere(transform.position, collisionRadius);
+        Gizmos.DrawWireSphere(transform.position + new Vector3(0,collisionOffset,0), collisionRadius);
 
         if (tileMap == null) return;
 
@@ -236,11 +237,11 @@ public class PlayerControllerCore : MonoBehaviour
         LayerMask collisionMask = obstacleLayer | waterLayer | savePointLayer | fireDestructibleLayer;
 
         Vector3 temp = new Vector3();
-        if (!Physics2D.OverlapCircle(pos + new Vector2(delta.x, 0), collisionRadius, collisionMask))
+        if (!Physics2D.OverlapCircle(pos + new Vector2(delta.x, collisionOffset), collisionRadius, collisionMask))
         {
             temp.x = delta.x;
         }
-        if (!Physics2D.OverlapCircle(pos + new Vector2(0, delta.y), collisionRadius, collisionMask))
+        if (!Physics2D.OverlapCircle(pos + new Vector2(0, delta.y + collisionOffset), collisionRadius, collisionMask))
         {
             temp.y = delta.y;
         }

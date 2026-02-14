@@ -682,14 +682,6 @@ PrefabInstance:
       value: DialogueCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 4592914328863785267, guid: 27054b816d56458419d408a86bdf5181, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 095187e5c121e4f408e09b893e1e16c2, type: 2}
-    - target: {fileID: 4592914328863785267, guid: 27054b816d56458419d408a86bdf5181, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 5853348219400203648, guid: 095187e5c121e4f408e09b893e1e16c2, type: 2}
-    - target: {fileID: 4592914328863785267, guid: 27054b816d56458419d408a86bdf5181, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
